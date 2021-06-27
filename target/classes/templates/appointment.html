@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:th="http://www.thymeleaf.org" class="js"
+	  xmlns:sec="http://www.w3.org/1999/xhtml"
+	  layout:decorate="~{fragments/layout.html}">
+
+<section class="section" layout:fragment="content">
+	<div class="swiper-form-wrap">
+		<!-- Swiper-->
+		<div class="swiper-container swiper-slider swiper-slider-custom swiper-slider_height-1 swiper-align-left swiper-align-left-custom context-dark bg-gray-darker" data-loop="true" data-autoplay="5500" data-simulate-touch="true" data-slide-effect="fade">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" data-slide-bg="images/landing-private-airlines-slider-1.jpg">
+					<div class="swiper-slide-caption">
+						<div class="container container-bigger swiper-main-section">
+							<div class="row justify-content-sm-center justify-content-md-start row-ten">
+								<div class="col-lg-4 col-xl-3 col-xxl-4 text-center text-lg-left">
+									<div class="box-width-3">
+										<h1 class="text-sbold">Selamat Datang di Buku Tamu PA Ponorogo</h1><a class="button button-default-outline button-nina button-sm" href="index.html#">learn more</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="swiper-slide" data-slide-bg="images/landing-private-airlines-slider-2.jpg">
+					<div class="swiper-slide-caption">
+						<div class="container container-bigger swiper-main-section">
+							<div class="row justify-content-sm-center justify-content-md-start row-ten">
+								<div class="col-lg-5 text-center text-lg-left">
+									<h1 class="text-sbold"></h1><a class="button button-default-outline button-nina button-sm button-top" href="index.html#"></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Swiper controls-->
+			<div class="swiper-pagination-wrap">
+				<div class="container container-bigger">
+					<div class="row row-ten">
+						<div class="col-sm-12">
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Swiper Navigation-->
+			<div class="swiper-button-prev mdi mdi-chevron-left"></div>
+			<div class="swiper-button-next mdi mdi-chevron-right"></div>
+		</div>
+		<div class="container container-bigger form-request-wrap form-request-wrap-modern">
+			<div class="row justify-content-sm-center justify-content-lg-end row-ten">
+				<div class="col-lg-4 col-xxl-4">
+					<div class="form-request form-request-modern bg-gray-lighter">
+						<h4 class="heading-line text-regular ls-1">Buat Janji</h4>
+						<!-- RD Mailform-->
+						<form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="contact" action="/appointment" method="post">
+							<div class="row row-20">
+								<div class="col-md-6">
+									<label class="form-label-outside">Jenis Tamu</label>
+									<div class="form-wrap">
+										<!-- Select 2-->
+										<select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" data-constraints="@Required" name="jenis">
+											<option value="">Pilih salah satu</option>
+											<option value="khusus">Tamu Khusus</option>
+											<option value="umum">Tamu Umum</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-6"></div>
+								<div class="col-md-6">
+									<label class="form-label-outside">Nama</label>
+									<div class="form-wrap form-wrap-inline">
+										<input class="form-input" id="nama" type="text" name="nama" required/>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<label class="form-label-outside">Jenis Kelamin</label>
+									<div class="form-wrap">
+										<!-- Select 2-->
+										<select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" data-constraints="@Required" name="jenisKelamin">
+											<option value="">Pilih salah satu</option>
+											<option value="Laki-Laki">Laki-laki</option>
+											<option value="Perempuan">Perempuan</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<label class="form-label-outside">Alamat</label>
+									<div class="form-wrap form-wrap-inline">
+										<input class="form-input" id="alamat" type="text" name="alamat"/>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-wrap form-wrap-validation">
+										<label class="form-label-outside" for="tipeIdentitas">Jenis Tanda Pengenal</label>
+										<select class="form-input select-filter" data-placeholder="All" data-minimum-results-for-search="Infinity" data-constraints="@Required" id="tipeIdentitas" name="tipeIdentitas">
+											<option value="">Pilih salah satu</option>
+											<option value="KTP">KTP</option>
+											<option value="SIM">SIM</option>
+											<option value="Kartu Pelajar">Kartu Pelajar</option>
+											<option value="Passpo">Passpor</option>
+											<option value="Tanda Pengenal Instansi">Tanda Pengenal Instansi</option>
+											<option value="Lainnya">Lainnya</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-wrap form-wrap-validation">
+										<label class="form-label-outside" for="nomorIdentitas">No Tanda Pengenal</label>
+										<input class="form-input" id="nomorIdentitas" type="text" name="nomorIdentitas" data-constraints="@Required">
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<label class="form-label-outside">Pihak yang ditemui</label>
+									<input class="form-input" id="pihakYgDitemui" type="text" name="pihakYgDitemui" data-constraints="@Required">
+
+								</div>
+								<div class="col-md-6">
+									<div class="form-wrap">
+										<label class="form-label-outside" for="keperluan">Keperluan</label>
+										<select class="form-input select-filter" id="keperluan" data-placeholder="All" data-minimum-results-for-search="Infinity" data-constraints="@Required" name="keperluan">
+											<option value="">Pilih salah satu</option>
+
+											<option value="Dinas">Dinas</option>
+											<option value="Pribadi">Pribadi</option>
+											<option value="Informasi & Pengaduan">Informasi & Pengaduan</option>
+											<option value="Surat Menyurat">Surat Menyurat</option>
+											<option value="Lainnya">Lainnya</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<label class="form-label-outside">Keterangan</label>
+									<div class="form-wrap form-wrap-inline">
+										<input class="form-input" id="forms-3-street-address" type="text" name="keterangan">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-wrap form-wrap-validation">
+										<label class="form-label-outside" for="noHp">No Handphone</label>
+										<input class="form-input" id="noHp" type="text" name="noHp" data-constraints="@Required">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-wrap form-wrap-validation">
+										<label class="form-label-outside" for="noTelepon">No Telepon</label>
+										<input class="form-input" id="noTelepon" type="text" name="noTelepon" data-constraints="@Required">
+									</div>
+								</div>
+								<div class="col-lg-12 offset-custom-4">
+									<div class="form-button">
+										<button class="button button-secondary button-nina" type="submit">Submit</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</html>

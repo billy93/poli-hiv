@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org" class="js"
+      xmlns:sec="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{fragments/layout.html}">
+
+<!-- Color Header Row Table-->
+<section class="section section-lg bg-default text-center" layout:fragment="content">
+
+    <form id="searchForm" th:action="@{/appointment/list}" th:object="${searchParam}" method="post">
+        <input type="hidden" id="page" th:field="*{page}"/>
+        <div class="container-fullwidth-custom">
+            <div class="row justify-content-sm-center">
+                <div class="col-lg-10 col-xl-10">
+                    <h3 class="text-primary text-uppercase">Daftar Janji</h3>
+
+                    <div class="col-md-3">
+                        <div class="button button-icon button-icon-left button-secondary button-nina"><span class="icon fa fa-download"></span>Unduh</div>
+                    </div>
+
+                    <div class="table-novi table-custom-responsive">
+                        <table class="table-custom table-color-header">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Jenis Tamu</th>
+                                <th>Nama</th>
+                                <th>Jenis Kelamin</th>
+                                <th>Alamat</th>
+                                <th>Tanda Pengenal</th>
+                                <th>No Tanda Pengenal</th>
+                                <th>Pihak yang ditemui</th>
+                                <th>Keperluan</th>
+                                <th>Keterangan</th>
+                                <th>No HP</th>
+                                <th>No Telepon</th>
+                                <th>Tanggal & Jam Janji</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr th:each="bt, idx : ${appointment}">
+                                <td>[[${idx.index+1}]]</td>
+                                <td>[[${bt.jenis}]]</td>
+                                <td>[[${bt.nama}]]</td>
+                                <td>[[${bt.jenisKelamin}]]</td>
+                                <td>[[${bt.alamat}]]</td>
+                                <td>[[${bt.tipeIdentitas}]]</td>
+                                <td>[[${bt.nomorIdentitas}]]</td>
+                                <td>[[${bt.pihakYgDitemui}]]</td>
+                                <td>[[${bt.keperluan}]]</td>
+                                <td>[[${bt.keterangan}]]</td>
+                                <td>[[${bt.noHp}]]</td>
+                                <td>[[${bt.noTelepon}]]</td>
+                                <td>19/06/2021 09:00</td>
+                                <td>
+                                    <span th:if="${bt.approved}">Diterima</span>
+                                    <span th:if="${!bt.approved}">Ditolak / Belum diproses</span>
+                                </td>
+                                <td>
+                                    <form action="/appointment/approve" method="post">
+                                        <input type="hidden" name="id" th:value="${bt.id}"/>
+                                        <button type="submit" class="button button-xs button-secondary button-nina">Approve</button>
+                                    </form>
+                                    <form action="/appointment/reject" method="post">
+                                        <input type="hidden" name="id" th:value="${bt.id}"/>
+                                        <button type="submit" class="button button-xs button-secondary button-nina">Reject</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <div></div>
+                        <ul class="pagination-custom">
+                            <li>
+                                <a href="#" th:onclick="'paginationLink(\'' + @{${currentPage}-1} + '\')'">
+                                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.4 1.4L6 0L0 6L6 12L7.4 10.6L2.8 6L7.4 1.4Z" fill="#878787"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li th:classappend="${page == currentPage+1 ? 'active':''}">
+                                <a th:each="page : ${pageNumbers}" th:onclick="'paginationLink(\'' + @{${page}-1} + '\')'">
+                                    [[${page}]]
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" th:onclick="'paginationLink(\'' + @{${currentPage}+1} + '\')'">
+                                    <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.599976 1.4L1.99998 0L7.99998 6L1.99998 12L0.599976 10.6L5.19998 6L0.599976 1.4Z" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script th:inline="javascript">
+        var totalPages = /*[[${totalPages}]]*/ 0;
+        function paginationLink(page){
+            if(page < 0){
+                page = 0;
+            }
+            else if(page > totalPages-1){
+                page = totalPages-1;
+            }
+            $('#page').val(page);
+            $('#searchForm').submit();
+        }
+    </script>
+</section>
+
+</html>
