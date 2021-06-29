@@ -1,0 +1,632 @@
+<div xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" th:fragment="form-poli-hiv">
+    <form method="post" action="/">
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                <div class="mdc-text-field  mdc-text-field--outlined">
+                    <input class="mdc-text-field__input">
+                    <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                            <label class="mdc-floating-label">No Rekam Medis</label>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                <div class="mdc-text-field mdc-text-field--outlined">
+                    <input class="mdc-text-field__input">
+                    <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                            <label class="mdc-floating-label">Nik</label>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                <div class="mdc-text-field mdc-text-field--outlined">
+                    <input class="mdc-text-field__input">
+                    <div class="mdc-notched-outline">
+                        <div class="mdc-notched-outline__leading"></div>
+                        <div class="mdc-notched-outline__notch">
+                            <label class="mdc-floating-label">No Register</label>
+                        </div>
+                        <div class="mdc-notched-outline__trailing"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell--span-12">
+                <div class="mdc-card">
+                    <h6 class="card-title">Data Klien</h6>
+                    <div class="template-demo">
+                        <div class="mdc-layout-grid__inner">
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                <div class="mdc-text-field  mdc-text-field--outlined">
+                                    <input class="mdc-text-field__input">
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            <label class="mdc-floating-label">Nama</label>
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                <div class="mdc-text-field  mdc-text-field--outlined">
+                                    <input class="mdc-text-field__input">
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            <label class="mdc-floating-label">Alamat</label>
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                <div class="mdc-text-field  mdc-text-field--outlined">
+                                    <input class="mdc-text-field__input">
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            <label class="mdc-floating-label">Provinsi</label>
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                <div class="mdc-text-field  mdc-text-field--outlined">
+                                    <input class="mdc-text-field__input">
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            <label class="mdc-floating-label">Kota/Kabupaten</label>
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                <div class="mdc-text-field  mdc-text-field--outlined">
+                                    <input class="mdc-text-field__input">
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            <label class="mdc-floating-label">Nama Ibu Kandung</label>
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                <div class="col">
+                                    <div class="row">
+                                        <label>Jenis Kelamin</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mdc-form-field" style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <div class="mdc-radio__background">
+                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-radio__mixedmark"></div>
+                                                </div>
+                                            </div>
+                                            <label for="radio-1">Laki-laki</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Perempuan</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                <div class="col">
+                                    <div class="row">
+                                        <label>Status Perkawinan</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mdc-form-field" style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <div class="mdc-radio__background">
+                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-radio__mixedmark"></div>
+                                                </div>
+                                            </div>
+                                            <label for="radio-1">Kawin</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Tidak Kawin</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Cerai Hidup</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Cerai Mati</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                <div class="col">
+                                    <div class="row">
+                                        <label>Status Kehamilan</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mdc-form-field" style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <div class="mdc-radio__background">
+                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-radio__mixedmark"></div>
+                                                </div>
+                                            </div>
+                                            <label for="radio-1">Trimester I</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Trimester II</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Trimester III</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Tidak Hamil</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Tidak Tahu</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                <div class="col">
+                                    <div class="row">
+                                        <label>Pendidikan Terakhir</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mdc-form-field" style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <div class="mdc-radio__background">
+                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-radio__mixedmark"></div>
+                                                </div>
+                                            </div>
+                                            <label for="radio-1">Tidak pernah sekolah</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">SD/sederajatnya</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">SMP/sederajatnya</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">SMA/sederajatnya</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Akademi/Perguruan Tinggi/sederajatnya</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                <div class="col">
+                                    <div class="row">
+                                        <label>Pekerjaan</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mdc-form-field" style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <div class="mdc-radio__background">
+                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-radio__mixedmark"></div>
+                                                </div>
+                                            </div>
+                                            <label for="radio-1">Tidak Bekerja</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Bekerja</label>
+                                        </div>
+                                        <div class="mdc-form-field">
+                                            <div class="mdc-text-field  mdc-text-field--outlined">
+                                                <input class="mdc-text-field__input">
+                                                <div class="mdc-notched-outline">
+                                                    <div class="mdc-notched-outline__leading"></div>
+                                                    <div class="mdc-notched-outline__notch">
+                                                        <label class="mdc-floating-label">Jenis Pekerjaan</label>
+                                                    </div>
+                                                    <div class="mdc-notched-outline__trailing"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                <div class="col">
+                                    <div class="row">
+                                        <label>Kelompok Resiko</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mdc-form-field" style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <div class="mdc-radio__background">
+                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-radio__mixedmark"></div>
+                                                </div>
+                                            </div>
+                                            <label for="radio-1">PS (Langsung)</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">PS (Tidak Langsung)</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Pelanggan PS</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Waria</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Pasangan Risti</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Penasun</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Gay/LSL</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Lainnya</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                <div class="mdc-text-field  mdc-text-field--outlined">
+                                    <input class="mdc-text-field__input">
+                                    <div class="mdc-notched-outline">
+                                        <div class="mdc-notched-outline__leading"></div>
+                                        <div class="mdc-notched-outline__notch">
+                                            <label class="mdc-floating-label">Lamanya (Bln/Thn<sup>*</sup>) diisi khusus PS dan Penasun</label>
+                                        </div>
+                                        <div class="mdc-notched-outline__trailing"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                <div class="col">
+                                    <div class="row">
+                                        <label>Status Kunjungan</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mdc-form-field" style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <div class="mdc-radio__background">
+                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-radio__mixedmark"></div>
+                                                </div>
+                                            </div>
+                                            <label for="radio-1">Datang Sendiri</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Dirujuk</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                <div class="col">
+                                    <div class="row">
+                                        <label>Status Rujukan</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mdc-form-field" style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <div class="mdc-radio__background">
+                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-radio__mixedmark"></div>
+                                                </div>
+                                            </div>
+                                            <label for="radio-1">Tempat Kerja</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Klp Dukungan</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Pasangan</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Kader</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">LSM</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Lain lain</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mdc-layout-grid__cell--span-12">
+                <div class="mdc-card">
+                    <h6 class="card-title">Populasi Khusus</h6>
+                    <div class="template-demo">
+                        <div class="mdc-layout-grid__inner">
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                <div class="col">
+                                    <div class="row">
+                                        <label>Klien WBP (Warga Binaan Pemasyarakatan)?</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mdc-form-field" style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <div class="mdc-radio__background">
+                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-radio__mixedmark"></div>
+                                                </div>
+                                            </div>
+                                            <label for="radio-1">Ya</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Tidak</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+            <div class="mdc-layout-grid__cell--span-12">
+                <div class="mdc-card">
+                    <h6 class="card-title">Konseling Pra Test <i>isikan bila lakukan konseling (KTS)</i></h6>
+                    <div class="template-demo">
+                        <div class="mdc-layout-grid__inner">
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                <div class="col">
+                                    <div class="row">
+                                        <label>Tanggal konseling pra tes HIV</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mdc-form-field">
+                                            <input class="form-control" type="date"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                <div class="col">
+                                    <div class="row">
+                                        <label>Status Klien</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mdc-form-field" style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <div class="mdc-radio__background">
+                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-radio__mixedmark"></div>
+                                                </div>
+                                            </div>
+                                            <label for="radio-1">Baru</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Lama</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                <div class="col">
+                                    <div class="row">
+                                        <label>Alasan Tes HIV</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="mdc-form-field" style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <div class="mdc-radio__background">
+                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                    </svg>
+                                                    <div class="mdc-radio__mixedmark"></div>
+                                                </div>
+                                            </div>
+                                            <label for="radio-1">Ingin tahu saja</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Merasa beresiko</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Mumpung gratis</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Tes ulang (window period)</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Untuk bekerja</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Ada gejala tertentu</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Akan menikah</label>
+                                        </div>
+                                        <div class="mdc-form-field"  style="margin: 10px">
+                                            <div class="mdc-radio">
+                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                            </div>
+                                            <label for="radio-1">Lainnya</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
