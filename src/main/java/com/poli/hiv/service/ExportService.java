@@ -8,6 +8,7 @@ import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 import com.poli.hiv.model.FieldData;
 import com.poli.hiv.model.PoliHIV;
+import org.apache.poi.util.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 import org.springframework.util.StringUtils;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -160,7 +162,7 @@ public class ExportService {
             //Create PdfReader instance.
 
             PdfReader pdfReader =
-                    new PdfReader(resourceLoader.getResource("classpath:konseling.pdf").getFile().getPath());
+                    new PdfReader(resourceLoader.getResource("classpath:konseling.pdf").getInputStream());
 
 
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -236,7 +238,8 @@ public class ExportService {
         PdfContentByte pageContentByte = pdfStamper.getOverContent(fieldCoordinate.getPage());
 
 
-        Image image = Image.getInstance(resourceLoader.getResource("classpath:blackdot.png").getFile().getPath());
+        byte[] data =IOUtils.toByteArray(resourceLoader.getResource("classpath:blackdot.png").getInputStream());
+        Image image = Image.getInstance(data);
         BaseFont baseFont = BaseFont.createFont(
                 BaseFont.TIMES_ROMAN,
                 BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
