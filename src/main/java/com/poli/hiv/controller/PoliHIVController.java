@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class PoliHIVController {
@@ -54,6 +55,13 @@ public class PoliHIVController {
         return "poli-hiv/poli-hiv";
     }
 
+    @GetMapping("/poli-hiv/edit/{id}")
+    public String edit(Model model, @PathVariable Long id){
+        Optional<PoliHIV> data = poliHIVRepository.findById(id);
+        model.addAttribute("form", data.get());
+        return "poli-hiv/poli-hiv";
+    }
+
     @PostMapping("/poli-hiv/form")
     public String index(Model model, @ModelAttribute PoliHIV poliHIV){
         poliHIVRepository.save(poliHIV);
@@ -65,6 +73,12 @@ public class PoliHIVController {
         List<PoliHIV> data = poliHIVRepository.findAll();
         model.addAttribute("data", data);
         return "poli-hiv/list";
+    }
+
+    @GetMapping("/poli-hiv/delete/{id}")
+    public String delete(Model model, @PathVariable Long id){
+        poliHIVRepository.deleteById(id);
+        return "redirect:/poli-hiv/list";
     }
 
 }

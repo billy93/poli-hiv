@@ -1,5 +1,7 @@
 <div xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" th:fragment="form-poli-hiv">
     <form method="post" action="/poli-hiv/form" th:object="${form}">
+        <input type="hidden" th:field="*{id}"/>
+
         <div class="mdc-layout-grid__inner">
             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
                 <div class="mdc-text-field  mdc-text-field--outlined">
@@ -322,7 +324,7 @@
                                     <div class="row">
                                         <div class="mdc-form-field" style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kelompokResiko}" value="PS (Langsung)">
                                                 <div class="mdc-radio__background">
                                                     <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
                                                         <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
@@ -334,43 +336,43 @@
                                         </div>
                                         <div class="mdc-form-field"  style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kelompokResiko}" value="PS (Tidak Langsung)">
                                             </div>
                                             <label for="radio-1">PS (Tidak Langsung)</label>
                                         </div>
                                         <div class="mdc-form-field"  style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kelompokResiko}" value="Pelanggan PS">
                                             </div>
                                             <label for="radio-1">Pelanggan PS</label>
                                         </div>
                                         <div class="mdc-form-field"  style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kelompokResiko}" value="Waria">
                                             </div>
                                             <label for="radio-1">Waria</label>
                                         </div>
                                         <div class="mdc-form-field"  style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kelompokResiko}" value="Pasangan Risti">
                                             </div>
                                             <label for="radio-1">Pasangan Risti</label>
                                         </div>
                                         <div class="mdc-form-field"  style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kelompokResiko}" value="Penasun">
                                             </div>
                                             <label for="radio-1">Penasun</label>
                                         </div>
                                         <div class="mdc-form-field"  style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kelompokResiko}" value="Gay/LSL">
                                             </div>
                                             <label for="radio-1">Gay/LSL</label>
                                         </div>
                                         <div class="mdc-form-field"  style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kelompokResiko}" value="Lainnya">
                                             </div>
                                             <label for="radio-1">Lainnya</label>
                                         </div>
@@ -380,7 +382,7 @@
 
                             <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
                                 <div class="mdc-text-field  mdc-text-field--outlined">
-                                    <input class="mdc-text-field__input">
+                                    <input class="mdc-text-field__input" th:field="*{lamaResiko}">
                                     <div class="mdc-notched-outline">
                                         <div class="mdc-notched-outline__leading"></div>
                                         <div class="mdc-notched-outline__notch">
@@ -398,7 +400,7 @@
                                     <div class="row">
                                         <div class="mdc-form-field" style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{statusKunjungan}" value="Datang Sendiri">
                                                 <div class="mdc-radio__background">
                                                     <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
                                                         <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
@@ -410,7 +412,7 @@
                                         </div>
                                         <div class="mdc-form-field"  style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{statusKunjungan}" value="Dirujuk">
                                             </div>
                                             <label for="radio-1">Dirujuk</label>
                                         </div>
@@ -425,7 +427,7 @@
                                     <div class="row">
                                         <div class="mdc-form-field" style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{statusRujukan}" value="Tempat Kerja">
                                                 <div class="mdc-radio__background">
                                                     <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
                                                         <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
@@ -437,33 +439,33 @@
                                         </div>
                                         <div class="mdc-form-field"  style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{statusRujukan}" value="Klp Dukungan">
                                             </div>
                                             <label for="radio-1">Klp Dukungan</label>
                                         </div>
                                         <div class="mdc-form-field"  style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{statusRujukan}" value="Pasangan">
                                             </div>
                                             <label for="radio-1">Pasangan</label>
                                         </div>
                                         <div class="mdc-form-field"  style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{statusRujukan}" value="Kader">
                                             </div>
                                             <label for="radio-1">Kader</label>
                                         </div>
                                         <div class="mdc-form-field"  style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{statusRujukan}" value="LSM">
                                             </div>
                                             <label for="radio-1">LSM</label>
                                         </div>
                                         <div class="mdc-form-field"  style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{statusRujukan}" value="Lain-lain">
                                             </div>
-                                            <label for="radio-1">Lain lain</label>
+                                            <label for="radio-1">Lain-lain</label>
                                         </div>
                                     </div>
                                 </div>
@@ -487,7 +489,7 @@
                                     <div class="row">
                                         <div class="mdc-form-field" style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{populasiKhusus}" value="Ya">
                                                 <div class="mdc-radio__background">
                                                     <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
                                                         <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
@@ -499,7 +501,7 @@
                                         </div>
                                         <div class="mdc-form-field"  style="margin: 10px">
                                             <div class="mdc-radio">
-                                                <input type="radio" class="mdc-radio__native-control" id="radio-1">
+                                                <input type="radio" class="mdc-radio__native-control" th:field="*{populasiKhusus}" value="Tidak">
                                             </div>
                                             <label for="radio-1">Tidak</label>
                                         </div>
@@ -525,7 +527,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="mdc-form-field">
-                                            <input class="form-control" type="date"/>
+                                            <input class="form-control" type="date" th:field="*{tanggalKonseling}"/>
                                         </div>
                                     </div>
                                 </div>
