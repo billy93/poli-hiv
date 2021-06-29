@@ -35,18 +35,22 @@ public class ExportService {
         fieldCoordinateHashMap = new HashMap<String, FieldData>();
 
         FieldData noRekamMedis = new FieldData();
+        noRekamMedis.setFontSize(10);
         noRekamMedis.setX(94);
         noRekamMedis.setY(737);
         noRekamMedis.setPage(1);
         fieldCoordinateHashMap.put("noRekamMedis", noRekamMedis);
 
+
         FieldData noRegister = new FieldData();
+        noRegister.setFontSize(10);
         noRegister.setX(94);
         noRegister.setY(720);
         noRegister.setPage(1);
         fieldCoordinateHashMap.put("noRegister", noRegister);
 
         FieldData nik = new FieldData();
+        nik.setFontSize(10);
         nik.setX(293);
         nik.setY(737);
         nik.setPage(1);
@@ -293,6 +297,15 @@ public class ExportService {
                 pageContentByte.setTextMatrix(fieldCoordinate.getX(), fieldCoordinate.getY());
                 pageContentByte.showText(value.toString());
                 pageContentByte.endText();
+
+                if(field.contentEquals("noRekamMedis") || field.contentEquals("nik") || field.contentEquals("noRegister")){
+                    PdfContentByte pageContentByte2 = pdfStamper.getOverContent(2);
+                    pageContentByte2.beginText();
+                    pageContentByte2.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    pageContentByte2.setTextMatrix(fieldCoordinate.getX(), fieldCoordinate.getY());
+                    pageContentByte2.showText(value.toString());
+                    pageContentByte2.endText();
+                }
             }
         } else if(fieldCoordinate.getType().contentEquals("checkbox")){
             if(field.contentEquals("jenisKelamin")){

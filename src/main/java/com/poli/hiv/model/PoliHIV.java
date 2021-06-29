@@ -1,5 +1,7 @@
 package com.poli.hiv.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -69,6 +71,7 @@ public class PoliHIV {
     @Column(name = "umur_anak_terakhir")
     private String umurAnakTerakhir;
     @Column(name = "tanggal_lahir")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date tanggalLahir;
     @Column(name = "jumlah_anak")
     private String jumlahAnak;
@@ -83,10 +86,12 @@ public class PoliHIV {
     @Column(name = "pasangan_hamil")
     private String pasanganHamil;
     @Column(name = "tanggal_lahir_pasangan")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date tanggalLahirPasangan;
     @Column(name = "status_pasangan")
     private String statusPasangan;
     @Column(name = "tanggal_tes_terakhir_pasangan")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date tanggalTesTerakhirPasangan;
     // end data klien
 
@@ -97,6 +102,7 @@ public class PoliHIV {
 
     // konseling pra test
     @Column(name = "tanggal_konseling")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date tanggalKonseling;
     @Column(name = "status_klien")
     private String statusKlien;
@@ -107,26 +113,32 @@ public class PoliHIV {
     @Column(name = "hub_seks_resiko")
     private String hubSeksResiko;
     @Column(name = "kapan_hub_seks_resiko")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date kapanHubSeksResiko;
     @Column(name = "anal_seks_resiko")
     private String analSeksResiko;
     @Column(name = "kapan_anal_seks_resiko")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date kapanAnalSeksResiko;
     @Column(name = "transfusi_darah")
     private String transfusiDarah;
     @Column(name = "kapan_transfusi_darah")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date kapanTransfusiDarah;
     @Column(name = "transmisi_ibu_anak")
     private String transmisiIbuAnak;
     @Column(name = "kapan_transmisi_ibu_anak")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date kapanTransmisiIbuAnak;
     @Column(name = "lainnya")
     private String lainnya;
     @Column(name = "kapan_lainnya")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date kapanLainnya;
     @Column(name = "periode_jendela")
     private String periodeJendela;
     @Column(name = "kapan_periode_jendela")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date kapanPeriodeJendela;
     @Column(name = "kesediaan_tes")
     private String kesediaanTes;
@@ -136,6 +148,7 @@ public class PoliHIV {
     @Column(name = "pernah_tes_dimana_kts")
     private String pernahTesDimanaKts;
     @Column(name = "pernah_tes_kapan_kts")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date pernahTesKapanKts;
     @Column(name = "hasil_tes_kts")
     private String hasilTesKts;
@@ -144,12 +157,14 @@ public class PoliHIV {
 
     // pemberian informasi
     @Column(name = "tanggal_pemberian_informasi")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date tanggalPemberianInformasi;
     @Column(name = "pernah_tes_tipk")
     private String pernahTesTipk;
     @Column(name = "pernah_tes_dimana_tipk")
     private String pernahTesDimanaTipk;
     @Column(name = "pernah_tes_kapan_tipk")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date pernahTesKapanTipk;
     @Column(name = "hasil_tes_tipk")
     private String hasilTesTipk;
@@ -162,6 +177,7 @@ public class PoliHIV {
 
     // tes antibodi hiv
     @Column(name = "tanggal_tes_hiv")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date tanggalTesHiv;
 
     @Column(name = "jenis_tes_hiv_rapid")
@@ -186,6 +202,7 @@ public class PoliHIV {
     @Column(name = "nomor_registrasi_nasional_pdp")
     private String nomorRegistrasiNasionalPdp;
     @Column(name = "tanggal_masuk_pdp")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date tanggalMasukPdp;
 
     @Column(name = "tindak_lanjut")
