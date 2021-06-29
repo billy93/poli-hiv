@@ -8,8 +8,10 @@ import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 import com.poli.hiv.model.FieldData;
 import com.poli.hiv.model.PoliHIV;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 import org.springframework.util.StringUtils;
@@ -23,7 +25,8 @@ import java.util.HashMap;
 
 @Service
 public class ExportService {
-
+    @Autowired
+    private ResourceLoader resourceLoader;
     private HashMap<String, FieldData> fieldCoordinateHashMap;
 
     public ExportService(){
@@ -155,8 +158,9 @@ public class ExportService {
     public Resource exportPoli(PoliHIV data){
         try {
             //Create PdfReader instance.
+
             PdfReader pdfReader =
-                    new PdfReader(ResourceUtils.getFile("classpath:konseling.pdf").getPath());
+                    new PdfReader(resourceLoader.getResource("classpath:konseling.pdf").getFile().getPath());
 
 
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -230,7 +234,9 @@ public class ExportService {
     private void setText(String field, Object value, PdfStamper pdfStamper) throws IOException, DocumentException {
         FieldData fieldCoordinate = (FieldData)fieldCoordinateHashMap.get(field);
         PdfContentByte pageContentByte = pdfStamper.getOverContent(fieldCoordinate.getPage());
-        Image image = Image.getInstance(ResourceUtils.getFile("classpath:blackdot.png").getPath());
+
+
+        Image image = Image.getInstance(resourceLoader.getResource("classpath:blackdot.png").getFile().getPath());
         BaseFont baseFont = BaseFont.createFont(
                 BaseFont.TIMES_ROMAN,
                 BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
