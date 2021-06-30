@@ -120,6 +120,12 @@ public class PoliHIV {
     @Column(name = "kapan_anal_seks_resiko")
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date kapanAnalSeksResiko;
+    @Column(name = "bergantian_peralatan_suntik")
+    private String bergantianPeralatanSuntik;
+    @Column(name = "kapan_bergantian_peralatan_suntik")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date kapanBergantianPeralatanSuntik;
+
     @Column(name = "transfusi_darah")
     private String transfusiDarah;
     @Column(name = "kapan_transfusi_darah")
@@ -904,6 +910,22 @@ public class PoliHIV {
 
     public void setJenisPelayanan(String jenisPelayanan) {
         this.jenisPelayanan = jenisPelayanan;
+    }
+
+    public String getBergantianPeralatanSuntik() {
+        return bergantianPeralatanSuntik;
+    }
+
+    public void setBergantianPeralatanSuntik(String bergantianPeralatanSuntik) {
+        this.bergantianPeralatanSuntik = bergantianPeralatanSuntik;
+    }
+
+    public Date getKapanBergantianPeralatanSuntik() {
+        return kapanBergantianPeralatanSuntik;
+    }
+
+    public void setKapanBergantianPeralatanSuntik(Date kapanBergantianPeralatanSuntik) {
+        this.kapanBergantianPeralatanSuntik = kapanBergantianPeralatanSuntik;
     }
 }
 
