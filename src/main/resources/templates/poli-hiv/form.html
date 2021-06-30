@@ -18,15 +18,14 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-12">
-
                                                 <div class="mdc-layout-grid__inner">
                                                     <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
                                                         <div class="mdc-text-field  mdc-text-field--outlined">
-                                                            <input class="mdc-text-field__input" th:field="*{noRekamMedis}">
+                                                            <input class="mdc-text-field__input" id="noRekamMedis" th:field="*{noRekamMedis}">
                                                             <div class="mdc-notched-outline">
                                                                 <div class="mdc-notched-outline__leading"></div>
                                                                 <div class="mdc-notched-outline__notch">
-                                                                    <label class="mdc-floating-label">No Rekam Medis</label>
+                                                                    <label class="mdc-floating-label" for="noRekamMedis">No Rekam Medis</label>
                                                                 </div>
                                                                 <div class="mdc-notched-outline__trailing"></div>
                                                             </div>
@@ -57,7 +56,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -1348,6 +1346,956 @@
                                                                 <input type="radio" class="mdc-radio__native-control" th:field="*{hasilTesKts}" value="Tidak Tahu">
                                                             </div>
                                                             <label for="radio-1">Tidak Tahu</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading-6">
+                                    <h6 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" href="#collapse-6" aria-expanded="false" aria-controls="collapse-6">Pemberian Informasi <i>Isikan bila penawaran tes oleh petugas kesehatan (TIPK)</i> </a>
+                                    </h6>
+                                </div>
+                                <div id="collapse-6" class="collapse" role="tabpanel" aria-labelledby="heading-6" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <div class="mdc-layout-grid__inner">
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Tanggal Pemberian Informasi</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <input class="form-control" type="date" th:field="*{tanggalPemberianInformasi}"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Pernah tes HIV sebelumnya?</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field" style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{pernahTesTipk}" value="Ya">
+                                                                <div class="mdc-radio__background">
+                                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-radio__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label for="radio-1">Ya</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{pernahTesTipk}" value="Tidak">
+                                                            </div>
+                                                            <label for="radio-1">Tidak</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Kapan?</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <input class="form-control" type="date" th:field="*{pernahTesKapanTipk}"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Dimana?</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-text-field  mdc-text-field--outlined">
+                                                            <input class="mdc-text-field__input" th:field="*{pernahTesDimanaTipk}">
+                                                            <div class="mdc-notched-outline">
+                                                                <div class="mdc-notched-outline__leading"></div>
+                                                                <div class="mdc-notched-outline__notch">
+                                                                    <label class="mdc-floating-label">Lokasi tes</label>
+                                                                </div>
+                                                                <div class="mdc-notched-outline__trailing"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-3-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Hasil?</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field" style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{hasilTesTipk}" value="Non Reaktif">
+                                                                <div class="mdc-radio__background">
+                                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-radio__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label for="radio-1">Non Reaktif</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{hasilTesTipk}" value="Reaktif">
+                                                            </div>
+                                                            <label for="radio-1">Reaktif</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{hasilTesTipk}" value="Tidak Tahu">
+                                                            </div>
+                                                            <label for="radio-1">Tidak Tahu</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Penyakit Terkait Pasien?</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{penyakitTerkaitPasienTipk}" value="TB">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>TB</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{penyakitTerkaitPasienTipk}" value="Diare">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Diare</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{penyakitTerkaitPasienTipk}" value="Kandidiasis oralesovagial">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Kandidiasis oralesovagial</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{penyakitTerkaitPasienTipk}" value="Dermatitis">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Dermatitis</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{penyakitTerkaitPasienTipk}" value="LGV">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>LGV</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{penyakitTerkaitPasienTipk}" value="PCP">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>PCP</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{penyakitTerkaitPasienTipk}" value="Herpes">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Herpes</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{penyakitTerkaitPasienTipk}" value="Toksoplasmosis">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Toksoplasmosis</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{penyakitTerkaitPasienTipk}" value="Wasting syndrome">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Wasting syndrome</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{penyakitTerkaitPasienTipk}" value="Sifilis">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Sifilis</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{penyakitTerkaitPasienTipk}" value="Hepatitis">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Hepatitis</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{penyakitTerkaitPasienTipk}" value="IMS Lainnya">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>IMS Lainnya</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{penyakitTerkaitPasienTipk}" value="Lainnya">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Lainnya</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Kesediaan untuk tes</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field" style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kesediaanTesTipk}" value="Ya">
+                                                                <div class="mdc-radio__background">
+                                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-radio__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label for="radio-1">Ya</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kesediaanTesTipk}" value="Tidak">
+                                                            </div>
+                                                            <label for="radio-1">Tidak</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading-7">
+                                    <h7 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" href="#collapse-7" aria-expanded="false" aria-controls="collapse-7"> Tes Antibodi HIV </a>
+                                    </h7>
+                                </div>
+                                <div id="collapse-7" class="collapse" role="tabpanel" aria-labelledby="heading-7" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <div class="mdc-layout-grid__inner">
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Tanggal Tes HIV</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <input class="form-control" type="date" th:field="*{tanggalTesHiv}"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                            <div class="col">
+                                                <div class="row">
+                                                    <label>Jenis tes HIV</label>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="mdc-form-field"  style="margin: 10px">
+                                                        <div class="mdc-checkbox">
+                                                            <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{jenisTesHiv}" value="Rapid Test">
+                                                            <div class="mdc-checkbox__background">
+                                                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                </svg>
+                                                                <div class="mdc-checkbox__mixedmark"></div>
+                                                            </div>
+                                                        </div>
+                                                        <label>Rapid Test</label>
+                                                    </div>
+
+                                                    <div class="mdc-form-field" style="margin: 10px">
+                                                        <div class="mdc-checkbox">
+                                                            <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{jenisTesHiv}" value="ELISA">
+                                                            <div class="mdc-checkbox__background">
+                                                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                </svg>
+                                                                <div class="mdc-checkbox__mixedmark"></div>
+                                                            </div>
+                                                        </div>
+                                                        <label>ELISA</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Hasil Tes R1</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field" style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{hasilTesR1}" value="Non Reaktif">
+                                                                <div class="mdc-radio__background">
+                                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-radio__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label for="radio-1">Non Reaktif</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{hasilTesR1}" value="Reaktif">
+                                                            </div>
+                                                            <label for="radio-1">Reaktif</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                <div class="mdc-text-field  mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input" th:field="*{hasilTesR1Reagen}">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">Nama Reagen</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Hasil Tes R2</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field" style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{hasilTesR2}" value="Non Reaktif">
+                                                                <div class="mdc-radio__background">
+                                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-radio__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label for="radio-1">Non Reaktif</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{hasilTesR2}" value="Reaktif">
+                                                            </div>
+                                                            <label for="radio-1">Reaktif</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                <div class="mdc-text-field  mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input" th:field="*{hasilTesR2Reagen}">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">Nama Reagen</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Hasil Tes R3</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field" style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{hasilTesR3}" value="Non Reaktif">
+                                                                <div class="mdc-radio__background">
+                                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-radio__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label for="radio-1">Non Reaktif</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{hasilTesR3}" value="Reaktif">
+                                                            </div>
+                                                            <label for="radio-1">Reaktif</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                <div class="mdc-text-field  mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input" th:field="*{hasilTesR3Reagen}">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">Nama Reagen</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Kesimpulan Hasil Tes HIV</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field" style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kesimpulanHasil}" value="Non Reaktif">
+                                                                <div class="mdc-radio__background">
+                                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-radio__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label for="radio-1">Non Reaktif</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kesimpulanHasil}" value="Reaktif">
+                                                            </div>
+                                                            <label for="radio-1">Reaktif</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kesimpulanHasil}" value="Indeterminate">
+                                                            </div>
+                                                            <label for="radio-1">Indeterminate</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                <div class="mdc-text-field  mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input" th:field="*{nomorRegistrasiNasionalPdp}">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">No Registrasi Nasional PDP</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Tgl Masuk PDP</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <input class="form-control" type="date" th:field="*{tanggalMasukPdp}"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                                <div class="mdc-text-field  mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input" th:field="*{rujukKonseling}">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">Rujuk Konseling</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                                <div class="mdc-text-field  mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input" th:field="*{rujukKe}">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">Rujuk ke</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Rujuk ke PDP dan PPIA</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field" style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{rujukKePdpDanPpia}" value="Ya">
+                                                                <div class="mdc-radio__background">
+                                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-radio__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label for="radio-1">Ya</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{rujukKePdpDanPpia}" value="Tidak">
+                                                            </div>
+                                                            <label for="radio-1">Tidak</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading-8">
+                                    <h8 class="mb-0">
+                                        <a class="collapsed" data-toggle="collapse" href="#collapse-8" aria-expanded="false" aria-controls="collapse-8"> Konseling Pasca Tes </a>
+                                    </h8>
+                                </div>
+                                <div id="collapse-8" class="collapse" role="tabpanel" aria-labelledby="heading-8" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <div class="mdc-layout-grid__inner">
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Tanggal Konseling Pasca Tes</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <input class="form-control" type="date" th:field="*{tanggalKonselingPascaTes}"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Terima hasil?</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field" style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{terimaHasil}" value="Ya">
+                                                                <div class="mdc-radio__background">
+                                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-radio__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label for="radio-1">Ya</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{terimaHasil}" value="Tidak">
+                                                            </div>
+                                                            <label for="radio-1">Tidak</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Kaji Gejala Tb</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field" style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kajiGejalaTb}" value="Ya">
+                                                                <div class="mdc-radio__background">
+                                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-radio__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label for="radio-1">Ya</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{kajiGejalaTb}" value="Tidak">
+                                                            </div>
+                                                            <label for="radio-1">Tidak</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                                <div class="mdc-text-field  mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input" th:field="*{jumlahKondom}">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">Jumlah kondom yang diberikan</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Tindak lanjut (KTS)</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{tindakLanjutPascaTes}" value="Tes Ulang">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Tes Ulang</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{tindakLanjutPascaTes}" value="Rujuk ke PDP">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Rujuk ke PDP</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{tindakLanjutPascaTes}" value="Rujuk ke Layanan PRTM">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Rujuk ke Layanan PRTM</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{tindakLanjutPascaTes}" value="Rujuk ke Layanan IMS">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Rujuk ke Layanan IMS</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{tindakLanjutPascaTes}" value="Rujuk ke PPIA">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Rujuk ke PPIA</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{tindakLanjutPascaTes}" value="Rujuk ke Rehab">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Rujuk ke Rehab</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{tindakLanjutPascaTes}" value="Rujuk ke Layanan LASS">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Rujuk ke Layanan LASS</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{tindakLanjutPascaTes}" value="Rujuk ke layanan TB">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Rujuk ke layanan TB</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{tindakLanjutPascaTes}" value="Rujuk ke Professional">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Rujuk ke Professional</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{tindakLanjutPascaTes}" value="Rujuk ke petugas pendukung">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Rujuk ke petugas pendukung</label>
+                                                        </div>
+
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" th:field="*{tindakLanjutPascaTes}" value="Konseling">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Konseling</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="mdc-text-field  mdc-text-field--outlined">
+                                                    <input class="mdc-text-field__input" th:field="*{namaKonselor}">
+                                                    <div class="mdc-notched-outline">
+                                                        <div class="mdc-notched-outline__leading"></div>
+                                                        <div class="mdc-notched-outline__notch">
+                                                            <label class="mdc-floating-label">Nama Konselor</label>
+                                                        </div>
+                                                        <div class="mdc-notched-outline__trailing"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Status Layanan</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field" style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{statusLayanan}" value="Rumah Sakit">
+                                                                <div class="mdc-radio__background">
+                                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-radio__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label for="radio-1">Rumah Sakit</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{statusLayanan}" value="Puskesmas">
+                                                            </div>
+                                                            <label for="radio-1">Puskesmas</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{statusLayanan}" value="Klinik">
+                                                            </div>
+                                                            <label for="radio-1">Klinik</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <label>Jenis Pelayanan</label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="mdc-form-field" style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{jenisPelayanan}" value="Layanan Menetap">
+                                                                <div class="mdc-radio__background">
+                                                                    <svg class="mdc-radio__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-radio__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-radio__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label for="radio-1">Layanan Menetap</label>
+                                                        </div>
+                                                        <div class="mdc-form-field"  style="margin: 10px">
+                                                            <div class="mdc-radio">
+                                                                <input type="radio" class="mdc-radio__native-control" th:field="*{jenisPelayanan}" value="Layanan Bergerak">
+                                                            </div>
+                                                            <label for="radio-1">Layanan Bergerak</label>
                                                         </div>
                                                     </div>
                                                 </div>

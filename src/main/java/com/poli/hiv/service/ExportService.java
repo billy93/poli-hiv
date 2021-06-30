@@ -159,6 +159,41 @@ public class ExportService {
         tglLahir.setFontSize(10);
         tglLahir.setMulti(true);
         fieldCoordinateHashMap.put("tglLahir", tglLahir);
+
+
+        FieldData kelompokResiko = new FieldData();
+        kelompokResiko.setX(16);
+        kelompokResiko.setY(437);
+        kelompokResiko.setPage(1);
+        kelompokResiko.setFontSize(10);
+        kelompokResiko.setType("checkbox");
+        fieldCoordinateHashMap.put("kelompokResiko", kelompokResiko);
+
+        FieldData lamaResiko = new FieldData();
+        lamaResiko.setX(52);
+        lamaResiko.setY(407);
+        lamaResiko.setPage(1);
+        lamaResiko.setFontSize(10);
+        lamaResiko.setMulti(true);
+        fieldCoordinateHashMap.put("lamaResiko", lamaResiko);
+
+        FieldData statusKunjungan = new FieldData();
+        statusKunjungan.setX(52);
+        statusKunjungan.setY(407);
+        statusKunjungan.setPage(1);
+        statusKunjungan.setFontSize(10);
+        statusKunjungan.setType("checkbox");
+        fieldCoordinateHashMap.put("statusKunjungan", statusKunjungan);
+
+        FieldData statusRujukan = new FieldData();
+        statusRujukan.setX(52);
+        statusRujukan.setY(407);
+        statusRujukan.setPage(1);
+        statusRujukan.setFontSize(10);
+        statusRujukan.setType("checkbox");
+        fieldCoordinateHashMap.put("statusRujukan", statusRujukan);
+
+
     }
 
     public Resource exportPoli(PoliHIV data){
@@ -217,14 +252,32 @@ public class ExportService {
             }
             if((!StringUtils.isEmpty(data.getPekerjaan()) && data.getPekerjaan().contentEquals("Bekerja")) && !StringUtils.isEmpty(data.getJenisPekerjaan())) {
                 setText("pekerjaan", data.getJenisPekerjaan(), pdfStamper);
-
             }
-//            setText("umurAnak", "12", pdfStamper);
-//            setText("jumlahAnak", "12", pdfStamper);
+            if(!StringUtils.isEmpty(data.getUmurAnakTerakhir())) {
+                setText("umurAnak", data.getUmurAnakTerakhir(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getJumlahAnak())) {
+                setText("jumlahAnak", data.getJumlahAnak(), pdfStamper);
+            }
+            if(data.getTanggalLahir()!=null) {
+                setText("tglLahir", data.getTanggalLahir(), pdfStamper);
+            }
 
 
-//            setText("tglLahir", new Date(), pdfStamper);
+            if(!StringUtils.isEmpty(data.getKelompokResiko())) {
+                setText("kelompokResiko", data.getKelompokResiko(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getLamaResiko())) {
+                setText("lamaResiko", data.getLamaResiko(), pdfStamper);
+            }
 
+            if(!StringUtils.isEmpty(data.getStatusKunjungan())) {
+                setText("statusKunjungan", data.getStatusKunjungan(), pdfStamper);
+            }
+
+            if(!StringUtils.isEmpty(data.getStatusRujukan())) {
+                setText("statusRujukan", data.getStatusRujukan(), pdfStamper);
+            }
             //Close the pdfStamper.
             pdfStamper.close();
 
@@ -307,7 +360,8 @@ public class ExportService {
                     pageContentByte2.endText();
                 }
             }
-        } else if(fieldCoordinate.getType().contentEquals("checkbox")){
+        }
+        else if(fieldCoordinate.getType().contentEquals("checkbox")){
             if(field.contentEquals("jenisKelamin")){
                 if(value.toString().contentEquals("Laki-laki")){
                     pageContentByte.beginText();
@@ -325,7 +379,8 @@ public class ExportService {
                     pageContentByte.addImage(image);
                     pageContentByte.endText();
                 }
-            } else if(field.contentEquals("statusPerkawinan")){
+            }
+            else if(field.contentEquals("statusPerkawinan")){
                 if(value.toString().contentEquals("Kawin")){
                     pageContentByte.beginText();
                     pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
@@ -333,7 +388,8 @@ public class ExportService {
                     image.setWidthPercentage(1);
                     pageContentByte.addImage(image);
                     pageContentByte.endText();
-                } else if(value.toString().contentEquals("Belum Kawin")){
+                }
+                else if(value.toString().contentEquals("Belum Kawin")){
                     pageContentByte.beginText();
                     pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                     image.setAbsolutePosition(164, fieldCoordinate.getY());
@@ -394,7 +450,6 @@ public class ExportService {
                     pageContentByte.endText();
                 }
             }
-
             else if(field.contentEquals("pendidikanTerakhir")){
                 if(value.toString().contentEquals("Tidak pernah sekolah")){
                     pageContentByte.beginText();
@@ -446,6 +501,103 @@ public class ExportService {
                     image.setAbsolutePosition(61, 478);
                     image.setWidthPercentage(1);
                 }
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("kelompokResiko")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("PS (Langsung)")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(16, 437);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("PS (Tidak Langsung)")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(48, 437);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Pelanggan PS")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(169, 437);
+                    image.setWidthPercentage(1);
+                }
+                else if(value.toString().contentEquals("Waria")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(17, 421);
+                    image.setWidthPercentage(1);
+                }
+                else if(value.toString().contentEquals("Pasangan Risti")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(58, 423);
+                    image.setWidthPercentage(1);
+                }
+                else if(value.toString().contentEquals("Penasun")){
+                    System.out.println("Masuk sini");
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(118, 423);
+                    image.setWidthPercentage(1);
+                }
+                else if(value.toString().contentEquals("Gay/LSL")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(215, 423);
+                    image.setWidthPercentage(1);
+                }
+                else if(value.toString().contentEquals("Lainnya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(169, 423);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("statusKunjungan")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Datang Sendiri")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(20, 380);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Dirujuk")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(20, 365);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("statusRujukan")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Tempat Kerja")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(138, 379);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Kader")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(196, 379);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Klp Dukungan")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(138, 364);
+                    image.setWidthPercentage(1);
+                }
+                else if(value.toString().contentEquals("LSM")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(196, 363);
+                    image.setWidthPercentage(1);
+                }
+                else if(value.toString().contentEquals("Pasangan")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(138, 348);
+                    image.setWidthPercentage(1);
+                }
+                else if(value.toString().contentEquals("Lain-lain")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(196, 349);
+                    image.setWidthPercentage(1);
+                }
+
                 pageContentByte.addImage(image);
                 pageContentByte.endText();
             }

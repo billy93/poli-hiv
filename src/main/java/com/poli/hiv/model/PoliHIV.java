@@ -1,9 +1,11 @@
 package com.poli.hiv.model;
 
+import com.poli.hiv.service.StringListConverter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "poli_hiv")
@@ -176,7 +178,8 @@ public class PoliHIV {
     private String hasilTesTipk;
 
     @Column(name = "penyakit_terkait_pasien_tipk")
-    private String penyakiTerkaitPasienTipk;
+    @Convert(converter = StringListConverter.class)
+    private List<String> penyakitTerkaitPasienTipk;
     @Column(name = "kesediaan_tes_tipk")
     private String kesediaanTesTipk;
     // end pemberian informasi
@@ -186,10 +189,9 @@ public class PoliHIV {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date tanggalTesHiv;
 
-    @Column(name = "jenis_tes_hiv_rapid")
-    private String jenisTesHivRapid;
-    @Column(name = "jenis_tes_hiv_elisa")
-    private String jenisTesHivElisa;
+    @Column(name = "jenis_tes_hiv")
+    @Convert(converter = StringListConverter.class)
+    private List<String> jenisTesHiv;
 
     @Column(name = "hasil_tes_r1")
     private String hasilTesR1;
@@ -227,6 +229,7 @@ public class PoliHIV {
 
     // konseling pasca test
     @Column(name = "tanggal_konseling_pasca_tes")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date tanggalKonselingPascaTes;
     @Column(name = "terima_hasil")
     private String terimaHasil;
@@ -236,7 +239,8 @@ public class PoliHIV {
     private String jumlahKondom;
 
     @Column(name = "tindak_lanjut_pasca_tes")
-    private String tindakLanjutPascaTes;
+    @Convert(converter = StringListConverter.class)
+    private List<String> tindakLanjutPascaTes;
     @Column(name = "tindak_lanjut_lainnya")
     private String tindakLanjutLainnya;
     @Column(name = "nama_konselor")
@@ -688,12 +692,12 @@ public class PoliHIV {
         this.hasilTesTipk = hasilTesTipk;
     }
 
-    public String getPenyakiTerkaitPasienTipk() {
-        return penyakiTerkaitPasienTipk;
+    public List<String> getPenyakitTerkaitPasienTipk() {
+        return penyakitTerkaitPasienTipk;
     }
 
-    public void setPenyakiTerkaitPasienTipk(String penyakiTerkaitPasienTipk) {
-        this.penyakiTerkaitPasienTipk = penyakiTerkaitPasienTipk;
+    public void setPenyakitTerkaitPasienTipk(List<String> penyakitTerkaitPasienTipk) {
+        this.penyakitTerkaitPasienTipk = penyakitTerkaitPasienTipk;
     }
 
     public String getKesediaanTesTipk() {
@@ -712,20 +716,12 @@ public class PoliHIV {
         this.tanggalTesHiv = tanggalTesHiv;
     }
 
-    public String getJenisTesHivRapid() {
-        return jenisTesHivRapid;
+    public List<String> getJenisTesHiv() {
+        return jenisTesHiv;
     }
 
-    public void setJenisTesHivRapid(String jenisTesHivRapid) {
-        this.jenisTesHivRapid = jenisTesHivRapid;
-    }
-
-    public String getJenisTesHivElisa() {
-        return jenisTesHivElisa;
-    }
-
-    public void setJenisTesHivElisa(String jenisTesHivElisa) {
-        this.jenisTesHivElisa = jenisTesHivElisa;
+    public void setJenisTesHiv(List<String> jenisTesHiv) {
+        this.jenisTesHiv = jenisTesHiv;
     }
 
     public String getHasilTesR1() {
@@ -872,11 +868,11 @@ public class PoliHIV {
         this.jumlahKondom = jumlahKondom;
     }
 
-    public String getTindakLanjutPascaTes() {
+    public List<String> getTindakLanjutPascaTes() {
         return tindakLanjutPascaTes;
     }
 
-    public void setTindakLanjutPascaTes(String tindakLanjutPascaTes) {
+    public void setTindakLanjutPascaTes(List<String> tindakLanjutPascaTes) {
         this.tindakLanjutPascaTes = tindakLanjutPascaTes;
     }
 
