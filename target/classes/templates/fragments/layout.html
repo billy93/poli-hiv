@@ -39,23 +39,36 @@
 			<div class="mdc-list-group">
 				<nav class="mdc-list mdc-drawer-menu">
 					<div class="mdc-list-item mdc-drawer-item">
-						<a class="mdc-drawer-link" th:classappend="${#httpServletRequest.requestURI == '/' ? 'active' : ''}" th:href="@{/}">
-							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i>
+						<a th:class="${#httpServletRequest.requestURI == '/' ? 'mdc-drawer-link active' : 'mdc-drawer-link'}" th:href="@{/}">
+							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon">home</i>
 							Dashboard
 						</a>
 					</div>
 					<div class="mdc-list-item mdc-drawer-item">
-						<a class="mdc-drawer-link" th:classappend="${#httpServletRequest.requestURI == '/poli-hiv/form' ? 'active' : ''}" th:href="@{/poli-hiv/form}">
-							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">track_changes</i>
+						<a th:class="${#httpServletRequest.requestURI.contentEquals('/form-lab/form') ? 'mdc-drawer-link active' : 'mdc-drawer-link'}" th:href="@{/form-lab/form}">
+							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon">track_changes</i>
+							Daftar Form Lab
+						</a>
+					</div>
+					<div class="mdc-list-item mdc-drawer-item">
+						<a th:class="${#httpServletRequest.requestURI.contentEquals('/form-lab/list') ? 'mdc-drawer-link active' : 'mdc-drawer-link'}"  th:href="@{/form-lab/list}">
+							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon">grid_on</i>
+							List Form Lab
+						</a>
+					</div>
+					<div class="mdc-list-item mdc-drawer-item">
+						<a th:class="${#httpServletRequest.requestURI.contentEquals('/poli-hiv/form') ? 'mdc-drawer-link active' : 'mdc-drawer-link'}" th:href="@{/poli-hiv/form}">
+							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon">track_changes</i>
 							Daftar Poli HIV
 						</a>
 					</div>
 					<div class="mdc-list-item mdc-drawer-item">
-						<a class="mdc-drawer-link" th:classappend="${#httpServletRequest.requestURI == '/poli-hiv/list' ? 'active' : ''}"  th:href="@{/poli-hiv/list}">
-							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">grid_on</i>
+						<a th:class="${#httpServletRequest.requestURI.contentEquals('/poli-hiv/list') ? 'mdc-drawer-link active' : 'mdc-drawer-link'}"  th:href="@{/poli-hiv/list}">
+							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon">grid_on</i>
 							List Poli HIV
 						</a>
 					</div>
+
 <!--					<div class="mdc-list-item mdc-drawer-item">-->
 <!--						<a class="mdc-expansion-panel-link" href="#" data-toggle="expansionPanel" data-target="ui-sub-menu">-->
 <!--							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">dashboard</i>-->

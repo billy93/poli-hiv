@@ -7,6 +7,7 @@ import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 import com.poli.hiv.model.FieldData;
+import com.poli.hiv.model.FormLab;
 import com.poli.hiv.model.PoliHIV;
 import org.apache.poi.util.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -193,7 +194,29 @@ public class ExportService {
         statusRujukan.setType("checkbox");
         fieldCoordinateHashMap.put("statusRujukan", statusRujukan);
 
+        FieldData pasanganTetap = new FieldData();
+        pasanganTetap.setX(367);
+        pasanganTetap.setY(468);
+        pasanganTetap.setPage(1);
+        pasanganTetap.setFontSize(10);
+        pasanganTetap.setType("checkbox");
+        fieldCoordinateHashMap.put("pasanganTetap", pasanganTetap);
 
+        FieldData pasanganWanita = new FieldData();
+        pasanganWanita.setX(367);
+        pasanganWanita.setY(468);
+        pasanganWanita.setPage(1);
+        pasanganWanita.setFontSize(10);
+        pasanganWanita.setType("checkbox");
+        fieldCoordinateHashMap.put("pasanganWanita", pasanganWanita);
+
+        FieldData pasanganHamil = new FieldData();
+        pasanganHamil.setX(367);
+        pasanganHamil.setY(468);
+        pasanganHamil.setPage(1);
+        pasanganHamil.setFontSize(10);
+        pasanganHamil.setType("checkbox");
+        fieldCoordinateHashMap.put("pasanganHamil", pasanganHamil);
     }
 
     public Resource exportPoli(PoliHIV data){
@@ -277,6 +300,16 @@ public class ExportService {
 
             if(!StringUtils.isEmpty(data.getStatusRujukan())) {
                 setText("statusRujukan", data.getStatusRujukan(), pdfStamper);
+            }
+
+            if(!StringUtils.isEmpty(data.getPasanganTetap())) {
+                setText("pasanganTetap", data.getPasanganTetap(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getPasanganWanita())) {
+                setText("pasanganWanita", data.getPasanganWanita(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getPasanganHamil())) {
+                setText("pasanganHamil", data.getPasanganHamil(), pdfStamper);
             }
             //Close the pdfStamper.
             pdfStamper.close();
@@ -601,6 +634,62 @@ public class ExportService {
                 pageContentByte.addImage(image);
                 pageContentByte.endText();
             }
+            else if(field.contentEquals("pasanganTetap")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(367, 469);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(385, 469);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("pasanganWanita")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(377, 433);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(395, 433);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("pasanganHamil")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(378, 423);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(396, 423);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak Tahu")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(423, 423);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
         }
+    }
+
+    public Resource exportFormLab(FormLab formLab) {
+        return null;
     }
 }

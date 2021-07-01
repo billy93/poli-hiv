@@ -1,0 +1,297 @@
+<div xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" th:fragment="form-lab">
+    <form method="post" action="/form-lab/form" th:object="${form}">
+        <input type="hidden" th:field="*{id}"/>
+
+        <div class="col-lg-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Form Lab</h4>
+                    <div class="mt-4">
+                        <div class="accordion" id="accordion" role="tablist">
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading-1">
+                                    <h6 class="mb-0">
+                                        <a data-toggle="collapse" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1" class="collapsed">Header</a>
+                                    </h6>
+                                </div>
+                                <div id="collapse-1" class="collapse" role="tabpanel" aria-labelledby="heading-1" data-parent="#accordion" style="">
+                                    <div class="card-body">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading-2">
+                                    <h6 class="mb-0">
+                                        <a data-toggle="collapse" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2" class="collapsed">Hematologi</a>
+                                    </h6>
+                                </div>
+                                <div id="collapse-2" class="collapse" role="tabpanel" aria-labelledby="heading-2" data-parent="#accordion" style="">
+                                    <div class="card-body">
+                                        <div class="mdc-layout-grid__inner">
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" value="Darah lengkap (Rutin + HT + Thr + Eri)">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Darah lengkap (Rutin + HT + Thr + Eri)</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" value="Darah Rutin (Hb, Leuco, Hj.Led)">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>Darah Rutin (Hb, Leuco, Hj.Led)</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" value="Haemoglobin">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>- Haemoglobin</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" value="Leucosit">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>- Leucosit</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" value="Eritrosit">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>- Eritrosit</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" value="LED">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>- LED</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" value="Hematokrit">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>- Hematokrit</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" value="Thrombosit">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>- Thrombosit</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" value="Eosinofil">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>- Eosinofil</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                <div class="col">
+                                                    <div class="row">
+                                                        <div class="mdc-form-field">
+                                                            <div class="mdc-checkbox">
+                                                                <input type="checkbox" class="mdc-checkbox__native-control" value="Golongan Darah + Rhesus">
+                                                                <div class="mdc-checkbox__background">
+                                                                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                                                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"></path>
+                                                                    </svg>
+                                                                    <div class="mdc-checkbox__mixedmark"></div>
+                                                                </div>
+                                                            </div>
+                                                            <label>- Golongan Darah + Rhesus</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading-3">
+                                    <h6 class="mb-0">
+                                        <a data-toggle="collapse" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3" class="collapsed">Kimia Darah</a>
+                                    </h6>
+                                </div>
+                                <div id="collapse-3" class="collapse" role="tabpanel" aria-labelledby="heading-3" data-parent="#accordion" style="">
+                                    <div class="card-body">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading-4">
+                                    <h6 class="mb-0">
+                                        <a data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4" class="collapsed">Urinalisa</a>
+                                    </h6>
+                                </div>
+                                <div id="collapse-4" class="collapse" role="tabpanel" aria-labelledby="heading-4" data-parent="#accordion" style="">
+                                    <div class="card-body">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading-5">
+                                    <h6 class="mb-0">
+                                        <a data-toggle="collapse" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5" class="collapsed">Tinja</a>
+                                    </h6>
+                                </div>
+                                <div id="collapse-5" class="collapse" role="tabpanel" aria-labelledby="heading-5" data-parent="#accordion" style="">
+                                    <div class="card-body">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" role="tab" id="heading-6">
+                                    <h6 class="mb-0">
+                                        <a data-toggle="collapse" href="#collapse-6" aria-expanded="false" aria-controls="collapse-6" class="collapsed">Immuno-Serologi</a>
+                                    </h6>
+                                </div>
+                                <div id="collapse-6" class="collapse" role="tabpanel" aria-labelledby="heading-6" data-parent="#accordion" style="">
+                                    <div class="card-body">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="mdc-layout-grid__inner">
+                        <button type="submit" class="mdc-button mdc-button--raised mdc-ripple-upgraded">
+                            Submit
+                        </button>
+                        <a href="/form-lab/list" class="mdc-button mdc-button--raised filled-button--secondary mdc-ripple-upgraded">
+                            Cancel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
