@@ -32,17 +32,18 @@ public class FormLabController {
     public ResponseEntity<Resource> exportPoli(@PathVariable Long id) throws IOException {
         FormLab formLab = formLabRepository.findById(id).get();
 
-        Resource file = exportService.exportFormLab(formLab);
+        return null;
+//        Resource file = exportService.exportFormLab(formLab);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-        String filename = "FormLab_"+formLab.getNama()+"_"+sdf.format(new Date())+".pdf";
-        return ResponseEntity.ok()
-                .header(HttpHeaders.CONTENT_DISPOSITION,
-                        "attachment; filename=\""+filename+"\"")
-//                .contentType(MediaType.parseMediaType("application/pdf"))
-                .contentType(MediaType.APPLICATION_PDF)
-                .contentLength(file.contentLength())
-                .body(file);
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+//        String filename = "FormLab_"+formLab.getNama()+"_"+sdf.format(new Date())+".pdf";
+//        return ResponseEntity.ok()
+//                .header(HttpHeaders.CONTENT_DISPOSITION,
+//                        "attachment; filename=\""+filename+"\"")
+////                .contentType(MediaType.parseMediaType("application/pdf"))
+//                .contentType(MediaType.APPLICATION_PDF)
+//                .contentLength(file.contentLength())
+//                .body(file);
     }
 
     @GetMapping("/form-lab/form")

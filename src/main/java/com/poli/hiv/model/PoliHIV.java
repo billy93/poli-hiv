@@ -4,6 +4,7 @@ import com.poli.hiv.service.StringListConverter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 
@@ -251,6 +252,10 @@ public class PoliHIV {
     private String jenisPelayanan;
     // end konseling pasca test
 
+    @Column(name = "created_date")
+    private Instant createdDate;
+    @Column(name = "updated_date")
+    private Instant updatedDate;
 
     public Long getId() {
         return id;
@@ -922,6 +927,22 @@ public class PoliHIV {
 
     public void setKapanBergantianPeralatanSuntik(Date kapanBergantianPeralatanSuntik) {
         this.kapanBergantianPeralatanSuntik = kapanBergantianPeralatanSuntik;
+    }
+
+    public Instant getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Instant createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Instant getUpdatedDate() {
+        return updatedDate;
+    }
+
+    public void setUpdatedDate(Instant updatedDate) {
+        this.updatedDate = updatedDate;
     }
 }
 

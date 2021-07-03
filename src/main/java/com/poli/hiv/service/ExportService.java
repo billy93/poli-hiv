@@ -31,8 +31,17 @@ public class ExportService {
     @Autowired
     private ResourceLoader resourceLoader;
     private HashMap<String, FieldData> fieldCoordinateHashMap;
+    private HashMap<String, FieldData> fieldCoordinateHashMapFormLab;
 
     public ExportService(){
+        setupFieldCoordinateHashMap();
+        setupFieldCoordinateHashMapFormLab();
+    }
+
+    private void setupFieldCoordinateHashMapFormLab() {
+    }
+
+    private void setupFieldCoordinateHashMap() {
         fieldCoordinateHashMap = new HashMap<String, FieldData>();
 
         FieldData noRekamMedis = new FieldData();
@@ -689,7 +698,95 @@ public class ExportService {
         }
     }
 
-    public Resource exportFormLab(FormLab formLab) {
+    private void setTextFormLab(String field, Object value, PdfStamper pdfStamper) throws IOException, DocumentException{
+        PdfContentByte pageContentByte = pdfStamper.getOverContent(1);
+
+        BaseFont baseFont = BaseFont.createFont(
+                BaseFont.TIMES_ROMAN,
+                BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+
+        if(field.contentEquals("noRegistrasi")) {
+            pageContentByte.beginText();
+            pageContentByte.setFontAndSize(baseFont, 10);
+            pageContentByte.setTextMatrix(403, 675);
+            pageContentByte.showText(value.toString());
+            pageContentByte.endText();
+        }
+        else if(field.contentEquals("nama")) {
+            pageContentByte.beginText();
+            pageContentByte.setFontAndSize(baseFont, 10);
+            pageContentByte.setTextMatrix(112, 675);
+            pageContentByte.showText(value.toString());
+            pageContentByte.endText();
+        }
+        else if(field.contentEquals("createdDate")) {
+            Date d = (Date)value;
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
+            pageContentByte.beginText();
+            pageContentByte.setFontAndSize(baseFont, 10);
+            pageContentByte.setTextMatrix(401, 161);
+            pageContentByte.showText(dateFormat.format(d));
+            pageContentByte.endText();
+        }
+        else if(field.contentEquals("tanggalLahir")) {
+
+            Date d = (Date)value;
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
+            pageContentByte.beginText();
+            pageContentByte.setFontAndSize(baseFont, 10);
+            pageContentByte.setTextMatrix(112, 660);
+            pageContentByte.showText(dateFormat.format(d));
+            pageContentByte.endText();
+        }
+        else if(field.contentEquals("alamat")) {
+            pageContentByte.beginText();
+            pageContentByte.setFontAndSize(baseFont, 10);
+            pageContentByte.setTextMatrix(114, 643);
+            pageContentByte.showText(value.toString());
+            pageContentByte.endText();
+        }
+    }
+
+    public Resource downloadFormLab(PoliHIV data) {
+        try {
+            //Create PdfReader instance.
+
+            PdfReader pdfReader =
+                    new PdfReader(resourceLoader.getResource("classpath:formlab.pdf").getInputStream());
+
+
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            //Create PdfStamper instance.
+            PdfStamper pdfStamper = new PdfStamper(pdfReader, byteArrayOutputStream);
+
+            //Get the number of pages in pdf.
+            int pages = pdfReader.getNumberOfPages();
+
+            // Set text
+            if(!StringUtils.isEmpty(data.getNoRegister())) {
+                setTextFormLab("noRekamMedis", data.getNoRekamMedis(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getCreatedDate())) {
+                setTextFormLab("createdDate", data.getCreatedDate(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getNama())) {
+                setTextFormLab("nama", data.getNama(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getAlamat())) {
+                setTextFormLab("alamat", data.getAlamat(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getTanggalLahir())) {
+                setTextFormLab("tanggalLahir", data.getTanggalLahir(), pdfStamper);
+            }
+            //Close the pdfStamper.
+            pdfStamper.close();
+
+            System.out.println("PDF modified successfully.");
+            return new ByteArrayResource(byteArrayOutputStream.toByteArray());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return null;
     }
+
 }

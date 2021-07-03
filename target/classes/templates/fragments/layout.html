@@ -38,24 +38,24 @@
 <!--			</div>-->
 			<div class="mdc-list-group">
 				<nav class="mdc-list mdc-drawer-menu">
-					<div class="mdc-list-item mdc-drawer-item">
-						<a th:class="${#httpServletRequest.requestURI == '/' ? 'mdc-drawer-link active' : 'mdc-drawer-link'}" th:href="@{/}">
-							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon">home</i>
-							Dashboard
-						</a>
-					</div>
-					<div class="mdc-list-item mdc-drawer-item">
-						<a th:class="${#httpServletRequest.requestURI.contentEquals('/form-lab/form') ? 'mdc-drawer-link active' : 'mdc-drawer-link'}" th:href="@{/form-lab/form}">
-							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon">track_changes</i>
-							Daftar Form Lab
-						</a>
-					</div>
-					<div class="mdc-list-item mdc-drawer-item">
-						<a th:class="${#httpServletRequest.requestURI.contentEquals('/form-lab/list') ? 'mdc-drawer-link active' : 'mdc-drawer-link'}"  th:href="@{/form-lab/list}">
-							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon">grid_on</i>
-							List Form Lab
-						</a>
-					</div>
+<!--					<div class="mdc-list-item mdc-drawer-item">-->
+<!--						<a th:class="${#httpServletRequest.requestURI == '/' ? 'mdc-drawer-link active' : 'mdc-drawer-link'}" th:href="@{/}">-->
+<!--							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon">home</i>-->
+<!--							Dashboard-->
+<!--						</a>-->
+<!--					</div>-->
+<!--					<div class="mdc-list-item mdc-drawer-item">-->
+<!--						<a th:class="${#httpServletRequest.requestURI.contentEquals('/form-lab/form') ? 'mdc-drawer-link active' : 'mdc-drawer-link'}" th:href="@{/form-lab/form}">-->
+<!--							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon">track_changes</i>-->
+<!--							Daftar Form Lab-->
+<!--						</a>-->
+<!--					</div>-->
+<!--					<div class="mdc-list-item mdc-drawer-item">-->
+<!--						<a th:class="${#httpServletRequest.requestURI.contentEquals('/form-lab/list') ? 'mdc-drawer-link active' : 'mdc-drawer-link'}"  th:href="@{/form-lab/list}">-->
+<!--							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon">grid_on</i>-->
+<!--							List Form Lab-->
+<!--						</a>-->
+<!--					</div>-->
 					<div class="mdc-list-item mdc-drawer-item">
 						<a th:class="${#httpServletRequest.requestURI.contentEquals('/poli-hiv/form') ? 'mdc-drawer-link active' : 'mdc-drawer-link'}" th:href="@{/poli-hiv/form}">
 							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon">track_changes</i>

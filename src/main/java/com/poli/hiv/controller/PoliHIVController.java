@@ -49,6 +49,23 @@ public class PoliHIVController {
                 .body(file);
     }
 
+    @GetMapping("/poli-hiv/download/{id}")
+    public ResponseEntity<Resource> downloadFormLab(@PathVariable Long id) throws IOException {
+        PoliHIV poliHIV = poliHIVRepository.findById(id).get();
+
+        Resource file = exportService.downloadFormLab(poliHIV);
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+        String filename = "FormLab_"+poliHIV.getNama()+"_"+sdf.format(new Date())+".pdf";
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION,
+                        "attachment; filename=\""+filename+"\"")
+//                .contentType(MediaType.parseMediaType("application/pdf"))
+                .contentType(MediaType.APPLICATION_PDF)
+                .contentLength(file.contentLength())
+                .body(file);
+    }
+
     @GetMapping("/poli-hiv/form")
     public String index(Model model){
         model.addAttribute("form", new PoliHIV());
