@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -81,6 +82,13 @@ public class PoliHIVController {
 
     @PostMapping("/poli-hiv/form")
     public String index(Model model, @ModelAttribute PoliHIV poliHIV){
+        if(poliHIV.getId() != null){
+            Optional<PoliHIV> poliHIV1 = poliHIVRepository.findById(poliHIV.getId());
+            poliHIV.setCreatedDate(poliHIV1.get().getCreatedDate());
+        }
+        else {
+            poliHIV.setCreatedDate(Instant.now());
+        }
         poliHIVRepository.save(poliHIV);
         return "redirect:/poli-hiv/list";
     }
@@ -98,4 +106,25 @@ public class PoliHIVController {
         return "redirect:/poli-hiv/list";
     }
 
+    @GetMapping("/poli-hiv/view")
+    public String view(){
+        return "poli-hiv/view";
+    }
+
+    public static class ViewPoliHIVForm{
+        public String noRegister;
+
+        public String getNoRegister() {
+            return noRegister;
+        }
+
+        public void setNoRegister(String noRegister) {
+            this.noRegister = noRegister;
+        }
+    }
+
+    @PostMapping("/poli-hiv/view")
+    public String viewPoliHiv(@ModelAttribute ViewPoliHIVForm viewPoliHIVForm){
+        return "redirect:/poli-hiv/edit/"+viewPoliHIVForm.getNoRegister();
+    }
 }

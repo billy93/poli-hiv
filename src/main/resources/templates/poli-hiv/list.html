@@ -15,6 +15,7 @@
                     <table class="table">
                       <thead>
                         <tr>
+                          <th class="text-left">No Register Sistem</th>
                           <th class="text-left">No Rekam Medis</th>
                           <th>NIK</th>
                           <th>No Register</th>
@@ -23,6 +24,7 @@
                       </thead>
                       <tbody>
                         <tr th:each="d : ${data}">
+                          <td class="text-left">[[${d.id}]]</td>
                           <td class="text-left">[[${d.noRekamMedis}]]</td>
                           <td>[[${d.nik}]]</td>
                           <td>[[${d.noRegister}]]</td>

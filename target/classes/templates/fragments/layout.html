@@ -63,6 +63,12 @@
 						</a>
 					</div>
 					<div class="mdc-list-item mdc-drawer-item">
+						<a th:class="${#httpServletRequest.requestURI.contentEquals('/poli-hiv/view') ? 'mdc-drawer-link active' : 'mdc-drawer-link'}" th:href="@{/poli-hiv/view}">
+							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon">track_changes</i>
+							Lihat Poli HIV
+						</a>
+					</div>
+					<div class="mdc-list-item mdc-drawer-item" sec:authorize="hasRole('ADMIN')">
 						<a th:class="${#httpServletRequest.requestURI.contentEquals('/poli-hiv/list') ? 'mdc-drawer-link active' : 'mdc-drawer-link'}"  th:href="@{/poli-hiv/list}">
 							<i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon">grid_on</i>
 							List Poli HIV
@@ -175,7 +181,8 @@
 					<div class="menu-button-container menu-profile d-none d-md-block">
 						<button class="mdc-button mdc-menu-button">
 							<span class="d-flex align-items-center">
-							  <span class="user-name">Admin</span>
+							  <span class="user-name" sec:authorize="hasRole('ADMIN')">Admin</span>
+								<span class="user-name" sec:authorize="!hasRole('ADMIN')">Login</span>
 							</span>
 						</button>
 						<div class="mdc-menu mdc-menu-surface" tabindex="-1">
