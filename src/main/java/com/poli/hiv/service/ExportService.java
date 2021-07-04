@@ -370,6 +370,70 @@ public class ExportService {
         hasilTesKts.setType("checkbox");
         fieldCoordinateHashMap.put("hasilTesKts", hasilTesKts);
 
+        FieldData pernahTesTipk = new FieldData();
+        pernahTesTipk.setX(366);
+        pernahTesTipk.setY(392);
+        pernahTesTipk.setPage(2);
+        pernahTesTipk.setFontSize(10);
+        pernahTesTipk.setType("checkbox");
+        fieldCoordinateHashMap.put("pernahTesTipk", pernahTesTipk);
+
+        FieldData hasilTesTipk = new FieldData();
+        hasilTesTipk.setX(366);
+        hasilTesTipk.setY(392);
+        hasilTesTipk.setPage(2);
+        hasilTesTipk.setFontSize(10);
+        hasilTesTipk.setType("checkbox");
+        fieldCoordinateHashMap.put("hasilTesTipk", hasilTesKts);
+
+        FieldData penyakitTerkaitPasienTipk = new FieldData();
+        penyakitTerkaitPasienTipk.setX(366);
+        penyakitTerkaitPasienTipk.setY(392);
+        penyakitTerkaitPasienTipk.setPage(2);
+        penyakitTerkaitPasienTipk.setFontSize(10);
+        penyakitTerkaitPasienTipk.setType("checkbox");
+        fieldCoordinateHashMap.put("penyakitTerkaitPasienTipk", penyakitTerkaitPasienTipk);
+
+        FieldData kesediaanTesTipk = new FieldData();
+        kesediaanTesTipk.setX(366);
+        kesediaanTesTipk.setY(392);
+        kesediaanTesTipk.setPage(2);
+        kesediaanTesTipk.setFontSize(10);
+        kesediaanTesTipk.setType("checkbox");
+        fieldCoordinateHashMap.put("kesediaanTesTipk", kesediaanTesTipk);
+
+        FieldData hasilTesR1 = new FieldData();
+        hasilTesR1.setX(366);
+        hasilTesR1.setY(392);
+        hasilTesR1.setPage(2);
+        hasilTesR1.setFontSize(10);
+        hasilTesR1.setType("checkbox");
+        fieldCoordinateHashMap.put("hasilTesR1", hasilTesR1);
+
+        FieldData hasilTesR2 = new FieldData();
+        hasilTesR2.setX(366);
+        hasilTesR2.setY(392);
+        hasilTesR2.setPage(2);
+        hasilTesR2.setFontSize(10);
+        hasilTesR2.setType("checkbox");
+        fieldCoordinateHashMap.put("hasilTesR2", hasilTesR2);
+
+        FieldData hasilTesR3 = new FieldData();
+        hasilTesR3.setX(366);
+        hasilTesR3.setY(392);
+        hasilTesR3.setPage(2);
+        hasilTesR3.setFontSize(10);
+        hasilTesR3.setType("checkbox");
+        fieldCoordinateHashMap.put("hasilTesR3", hasilTesR3);
+
+        FieldData kesimpulanHasil = new FieldData();
+        kesimpulanHasil.setX(366);
+        kesimpulanHasil.setY(392);
+        kesimpulanHasil.setPage(2);
+        kesimpulanHasil.setFontSize(10);
+        kesimpulanHasil.setType("checkbox");
+        fieldCoordinateHashMap.put("kesimpulanHasil", kesimpulanHasil);
+
     }
 
     public Resource exportPoli(PoliHIV data){
@@ -569,6 +633,35 @@ public class ExportService {
             if(!StringUtils.isEmpty(data.getHasilTesKts())) {
                 setText("hasilTesKts", data.getHasilTesKts(), pdfStamper);
             }
+
+            // Page 2 TIPK
+            if(!StringUtils.isEmpty(data.getPernahTesTipk())) {
+                setText("pernahTesTipk", data.getPernahTesTipk(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getHasilTesTipk())) {
+                setText("hasilTesTipk", data.getHasilTesTipk(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getPenyakitTerkaitPasienTipk())) {
+                setText("penyakitTerkaitPasienTipk", data.getPenyakitTerkaitPasienTipk(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getKesediaanTesTipk())) {
+                setText("kesediaanTesTipk", data.getKesediaanTesTipk(), pdfStamper);
+            }
+
+            // Tes antibodi HIV
+            if(!StringUtils.isEmpty(data.getHasilTesR1())) {
+                setText("hasilTesR1", data.getHasilTesR1(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getHasilTesR2())) {
+                setText("hasilTesR2", data.getHasilTesR2(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getHasilTesR3())) {
+                setText("hasilTesR3", data.getHasilTesR3(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getKesimpulanHasil())) {
+                setText("kesimpulanHasil", data.getKesimpulanHasil(), pdfStamper);
+            }
+
             //Close the pdfStamper.
             pdfStamper.close();
 
@@ -1311,6 +1404,142 @@ public class ExportService {
                 } else if(value.toString().contentEquals("Tidak Tahu")){
                     pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                     image.setAbsolutePosition(312, 99);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("pernahTesTipk")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(125, 659);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(125, 631);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("hasilTesTipk")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Non Reaktif")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(197, 645);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Reaktif")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(262, 645);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak Tahu")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(314, 645);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("penyakitTerkaitPasienTipk")){
+//                pageContentByte.beginText();
+//
+//                if(value.toString().contentEquals("Ya")){
+//                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+//                    image.setAbsolutePosition(124, 112);
+//                    image.setWidthPercentage(1);
+//                } else if(value.toString().contentEquals("Tidak")){
+//                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+//                    image.setAbsolutePosition(124, 89);
+//                    image.setWidthPercentage(1);
+//                }
+//
+//                pageContentByte.addImage(image);
+//                pageContentByte.endText();
+            }
+            else if(field.contentEquals("kesediaanTesTipk")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(124, 566);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(170, 566);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("hasilTesR1")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Non Reaktif")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(126, 518);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Reaktif")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(215, 518);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("hasilTesR2")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Non Reaktif")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(126, 500);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Reaktif")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(215, 500);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("hasilTesR3")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Non Reaktif")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(126, 482);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Reaktif")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(215, 482);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("kesimpulanHasil")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Non Reaktif")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(126, 464);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Reaktif")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(215, 464);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Indeterminate")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(277, 464);
                     image.setWidthPercentage(1);
                 }
 
