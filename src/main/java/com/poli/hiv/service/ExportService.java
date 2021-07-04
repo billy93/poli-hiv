@@ -271,7 +271,104 @@ public class ExportService {
         statusKlien.setY(392);
         statusKlien.setPage(1);
         statusKlien.setFontSize(10);
+        statusKlien.setType("checkbox");
         fieldCoordinateHashMap.put("statusKlien", statusKlien);
+
+        FieldData alasanTes = new FieldData();
+        alasanTes.setX(366);
+        alasanTes.setY(392);
+        alasanTes.setPage(1);
+        alasanTes.setFontSize(10);
+        alasanTes.setType("checkbox");
+        fieldCoordinateHashMap.put("alasanTes", alasanTes);
+
+        FieldData tahuDari = new FieldData();
+        tahuDari.setX(366);
+        tahuDari.setY(392);
+        tahuDari.setPage(1);
+        tahuDari.setFontSize(10);
+        tahuDari.setType("checkbox");
+        fieldCoordinateHashMap.put("tahuDari", tahuDari);
+
+        FieldData hubSeksResiko = new FieldData();
+        hubSeksResiko.setX(366);
+        hubSeksResiko.setY(392);
+        hubSeksResiko.setPage(1);
+        hubSeksResiko.setFontSize(10);
+        hubSeksResiko.setType("checkbox");
+        fieldCoordinateHashMap.put("hubSeksResiko", hubSeksResiko);
+
+        FieldData analSeksResiko = new FieldData();
+        analSeksResiko.setX(366);
+        analSeksResiko.setY(392);
+        analSeksResiko.setPage(1);
+        analSeksResiko.setFontSize(10);
+        analSeksResiko.setType("checkbox");
+        fieldCoordinateHashMap.put("analSeksResiko", analSeksResiko);
+
+        FieldData bergantianPeralatanSuntik = new FieldData();
+        bergantianPeralatanSuntik.setX(366);
+        bergantianPeralatanSuntik.setY(392);
+        bergantianPeralatanSuntik.setPage(1);
+        bergantianPeralatanSuntik.setFontSize(10);
+        bergantianPeralatanSuntik.setType("checkbox");
+        fieldCoordinateHashMap.put("bergantianPeralatanSuntik", bergantianPeralatanSuntik);
+
+        FieldData transfusiDarah = new FieldData();
+        transfusiDarah.setX(366);
+        transfusiDarah.setY(392);
+        transfusiDarah.setPage(1);
+        transfusiDarah.setFontSize(10);
+        transfusiDarah.setType("checkbox");
+        fieldCoordinateHashMap.put("transfusiDarah", transfusiDarah);
+
+        FieldData transmisiIbuAnak = new FieldData();
+        transmisiIbuAnak.setX(366);
+        transmisiIbuAnak.setY(392);
+        transmisiIbuAnak.setPage(1);
+        transmisiIbuAnak.setFontSize(10);
+        transmisiIbuAnak.setType("checkbox");
+        fieldCoordinateHashMap.put("transmisiIbuAnak", transmisiIbuAnak);
+
+        FieldData lainnya = new FieldData();
+        lainnya.setX(366);
+        lainnya.setY(392);
+        lainnya.setPage(1);
+        lainnya.setFontSize(10);
+        lainnya.setType("checkbox");
+        fieldCoordinateHashMap.put("lainnya", lainnya);
+
+        FieldData periodeJendela = new FieldData();
+        periodeJendela.setX(366);
+        periodeJendela.setY(392);
+        periodeJendela.setPage(1);
+        periodeJendela.setFontSize(10);
+        periodeJendela.setType("checkbox");
+        fieldCoordinateHashMap.put("periodeJendela", periodeJendela);
+
+        FieldData kesediaanTes = new FieldData();
+        kesediaanTes.setX(366);
+        kesediaanTes.setY(392);
+        kesediaanTes.setPage(1);
+        kesediaanTes.setFontSize(10);
+        kesediaanTes.setType("checkbox");
+        fieldCoordinateHashMap.put("kesediaanTes", kesediaanTes);
+
+        FieldData pernahTesKts = new FieldData();
+        pernahTesKts.setX(366);
+        pernahTesKts.setY(392);
+        pernahTesKts.setPage(1);
+        pernahTesKts.setFontSize(10);
+        pernahTesKts.setType("checkbox");
+        fieldCoordinateHashMap.put("pernahTesKts", pernahTesKts);
+
+        FieldData hasilTesKts = new FieldData();
+        hasilTesKts.setX(366);
+        hasilTesKts.setY(392);
+        hasilTesKts.setPage(1);
+        hasilTesKts.setFontSize(10);
+        hasilTesKts.setType("checkbox");
+        fieldCoordinateHashMap.put("hasilTesKts", hasilTesKts);
 
     }
 
@@ -387,6 +484,90 @@ public class ExportService {
 
             if(!StringUtils.isEmpty(data.getStatusKlien())) {
                 setText("statusKlien", data.getStatusKlien(), pdfStamper);
+            }
+
+            if(!StringUtils.isEmpty(data.getAlasanTes())) {
+                setText("alasanTes", data.getAlasanTes(), pdfStamper);
+            }
+
+            if(!StringUtils.isEmpty(data.getTahuDari())) {
+                setText("tahuDari", data.getTahuDari(), pdfStamper);
+            }
+
+            if(!StringUtils.isEmpty(data.getHubSeksResiko())) {
+                setText("hubSeksResiko", data.getHubSeksResiko(), pdfStamper);
+            }
+
+//            if(!StringUtils.isEmpty(data.getKapanHubSeksResiko())) {
+//                setText("kapanHubSeksResiko", data.getKapanHubSeksResiko(), pdfStamper);
+//            }
+
+            if(!StringUtils.isEmpty(data.getAnalSeksResiko())) {
+                setText("analSeksResiko", data.getAnalSeksResiko(), pdfStamper);
+            }
+
+//            if(!StringUtils.isEmpty(data.getKapanAnalSeksResiko())) {
+//                setText("kapanAnalSeksResiko", data.getKapanAnalSeksResiko(), pdfStamper);
+//            }
+
+            if(!StringUtils.isEmpty(data.getBergantianPeralatanSuntik())) {
+                setText("bergantianPeralatanSuntik", data.getBergantianPeralatanSuntik(), pdfStamper);
+            }
+
+//            if(!StringUtils.isEmpty(data.getKapanBergantianPeralatanSuntik())) {
+//                setText("kapanBergantianPeralatanSuntik", data.getKapanBergantianPeralatanSuntik(), pdfStamper);
+//            }
+
+            if(!StringUtils.isEmpty(data.getTransfusiDarah())) {
+                setText("transfusiDarah", data.getTransfusiDarah(), pdfStamper);
+            }
+
+//            if(!StringUtils.isEmpty(data.getKapanTransfusiDarah())) {
+//                setText("kapanTransfusiDarah", data.getKapanTransfusiDarah(), pdfStamper);
+//            }
+
+            if(!StringUtils.isEmpty(data.getTransmisiIbuAnak())) {
+                setText("transmisiIbuAnak", data.getTransmisiIbuAnak(), pdfStamper);
+            }
+
+//            if(!StringUtils.isEmpty(data.getKapanTransmisiIbuAnak())) {
+//                setText("kapanTransmisiIbuAnak", data.getKapanTransmisiIbuAnak(), pdfStamper);
+//            }
+
+            if(!StringUtils.isEmpty(data.getLainnya())) {
+                setText("lainnya", data.getLainnya(), pdfStamper);
+            }
+
+//            if(!StringUtils.isEmpty(data.getKapanLainnya())) {
+//                setText("kapanLainnya", data.getKapanLainnya(), pdfStamper);
+//            }
+
+            if(!StringUtils.isEmpty(data.getPeriodeJendela())) {
+                setText("periodeJendela", data.getPeriodeJendela(), pdfStamper);
+            }
+
+//            if(!StringUtils.isEmpty(data.getKapanPeriodeJendela())) {
+//                setText("kapanPeriodeJendela", data.getKapanPeriodeJendela(), pdfStamper);
+//            }
+
+            if(!StringUtils.isEmpty(data.getKesediaanTes())) {
+                setText("kesediaanTes", data.getKesediaanTes(), pdfStamper);
+            }
+
+            if(!StringUtils.isEmpty(data.getPernahTesKts())) {
+                setText("pernahTesKts", data.getPernahTesKts(), pdfStamper);
+            }
+
+//            if(!StringUtils.isEmpty(data.getPernahTesDimanaKts())) {
+//                setText("pernahTesDimanaKts", data.getPernahTesDimanaKts(), pdfStamper);
+//            }
+
+//            if(!StringUtils.isEmpty(data.getPernahTesKapanKts())) {
+//                setText("pernahTesKapanKts", data.getPernahTesKapanKts(), pdfStamper);
+//            }
+
+            if(!StringUtils.isEmpty(data.getHasilTesKts())) {
+                setText("hasilTesKts", data.getHasilTesKts(), pdfStamper);
             }
             //Close the pdfStamper.
             pdfStamper.close();
@@ -880,11 +1061,256 @@ public class ExportService {
 
                 if(value.toString().contentEquals("Baru")){
                     pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
-                    image.setAbsolutePosition(356, 282);
+                    image.setAbsolutePosition(355, 282);
                     image.setWidthPercentage(1);
                 } else if(value.toString().contentEquals("Lama")){
                     pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                     image.setAbsolutePosition(400, 282);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("alasanTes")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ingin tahu saja")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(125, 266);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Merasa beresiko")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(222, 266);
+                    image.setWidthPercentage(1);
+                }else if(value.toString().contentEquals("Mumpung gratis")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(313, 266);
+                    image.setWidthPercentage(1);
+                }else if(value.toString().contentEquals("Tes ulang (window period)")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(410, 266);
+                    image.setWidthPercentage(1);
+                }else if(value.toString().contentEquals("Untuk bekerja")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(125, 250);
+                    image.setWidthPercentage(1);
+                }else if(value.toString().contentEquals("Ada gejala tertentu")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(312, 250);
+                    image.setWidthPercentage(1);
+                }else if(value.toString().contentEquals("Akan menikah")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(412, 250);
+                    image.setWidthPercentage(1);
+                }else if(value.toString().contentEquals("Lainnya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(220, 250);
+                    image.setWidthPercentage(1);
+                }
+
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }else if(field.contentEquals("tahuDari")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Brosur")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(124, 233);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Koran")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(202, 233);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("TV")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(260, 233);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Petugas Kesehatan")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(339, 233);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Teman")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(397, 233);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Petugas Outreach")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(123, 218);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Poster")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(201, 218);
+                    image.setWidthPercentage(1);
+                }else if(value.toString().contentEquals("Lay Konselor")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(261, 218);
+                    image.setWidthPercentage(1);
+                }else if(value.toString().contentEquals("Lainnya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(339, 218);
+                    image.setWidthPercentage(1);
+                }
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }else if(field.contentEquals("hubSeksResiko")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(123, 187);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(247, 187);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }else if(field.contentEquals("analSeksResiko")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(365, 187);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(489, 187);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("bergantianPeralatanSuntik")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(123, 168);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(248, 168);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("transfusiDarah")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(365, 169);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(489, 169);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("transmisiIbuAnak")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(125, 150);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(247, 150);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("lainnya")){
+                pageContentByte.beginText();
+
+//                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(364, 150);
+                    image.setWidthPercentage(1);
+//                } else if(value.toString().contentEquals("Tidak")){
+//                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+//                    image.setAbsolutePosition(400, 150);
+//                    image.setWidthPercentage(1);
+//                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("periodeJendela")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(124, 131);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(247, 131);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("kesediaanTes")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(365, 131);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(417, 131);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("pernahTesKts")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(124, 112);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(124, 89);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("hasilTesKts")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Non Reaktif")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(195, 99);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Reaktif")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(260, 99);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak Tahu")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(312, 99);
                     image.setWidthPercentage(1);
                 }
 
