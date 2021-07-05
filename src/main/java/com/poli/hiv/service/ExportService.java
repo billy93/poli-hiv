@@ -25,6 +25,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 @Service
 public class ExportService {
@@ -434,6 +435,63 @@ public class ExportService {
         kesimpulanHasil.setType("checkbox");
         fieldCoordinateHashMap.put("kesimpulanHasil", kesimpulanHasil);
 
+        FieldData rujukKonseling = new FieldData();
+        rujukKonseling.setX(366);
+        rujukKonseling.setY(392);
+        rujukKonseling.setPage(2);
+        rujukKonseling.setFontSize(10);
+        rujukKonseling.setType("checkbox");
+        fieldCoordinateHashMap.put("rujukKonseling", rujukKonseling);
+
+        FieldData rujukKe = new FieldData();
+        rujukKe.setX(366);
+        rujukKe.setY(392);
+        rujukKe.setPage(2);
+        rujukKe.setFontSize(10);
+        rujukKe.setType("checkbox");
+        fieldCoordinateHashMap.put("rujukKe", rujukKe);
+
+        FieldData rujukKePdpDanPpia = new FieldData();
+        rujukKePdpDanPpia.setX(366);
+        rujukKePdpDanPpia.setY(392);
+        rujukKePdpDanPpia.setPage(2);
+        rujukKePdpDanPpia.setFontSize(10);
+        rujukKePdpDanPpia.setType("checkbox");
+        fieldCoordinateHashMap.put("rujukKePdpDanPpia", rujukKe);
+
+        FieldData statusHivPasangan = new FieldData();
+        statusHivPasangan.setX(366);
+        statusHivPasangan.setY(392);
+        statusHivPasangan.setPage(2);
+        statusHivPasangan.setFontSize(10);
+        statusHivPasangan.setType("checkbox");
+        fieldCoordinateHashMap.put("statusHivPasangan", statusHivPasangan);
+
+        FieldData tindakLanjutPascaTes = new FieldData();
+        tindakLanjutPascaTes.setX(366);
+        tindakLanjutPascaTes.setY(392);
+        tindakLanjutPascaTes.setPage(2);
+        tindakLanjutPascaTes.setFontSize(10);
+        tindakLanjutPascaTes.setType("checkbox");
+        fieldCoordinateHashMap.put("tindakLanjutPascaTes", tindakLanjutPascaTes);
+
+        FieldData terimaHasil = new FieldData();
+        terimaHasil.setX(366);
+        terimaHasil.setY(392);
+        terimaHasil.setPage(2);
+        terimaHasil.setFontSize(10);
+        terimaHasil.setType("checkbox");
+        fieldCoordinateHashMap.put("terimaHasil", terimaHasil);
+
+
+        FieldData kajiGelajaTb = new FieldData();
+        kajiGelajaTb.setX(366);
+        kajiGelajaTb.setY(392);
+        kajiGelajaTb.setPage(2);
+        kajiGelajaTb.setFontSize(10);
+        kajiGelajaTb.setType("checkbox");
+        fieldCoordinateHashMap.put("kajiGelajaTb", kajiGelajaTb);
+
     }
 
     public Resource exportPoli(PoliHIV data){
@@ -661,7 +719,30 @@ public class ExportService {
             if(!StringUtils.isEmpty(data.getKesimpulanHasil())) {
                 setText("kesimpulanHasil", data.getKesimpulanHasil(), pdfStamper);
             }
+            if(!StringUtils.isEmpty(data.getTindakLanjutPascaTes())) {
+                setText("tindakLanjutPascaTes", data.getTindakLanjutPascaTes(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getRujukKonseling())) {
+                setText("rujukKonseling", data.getRujukKonseling(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getRujukKe())) {
+                setText("rujukKe", data.getRujukKe(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getRujukKePdpDanPpia())) {
+                setText("rujukKePdpDanPpia", data.getRujukKePdpDanPpia(), pdfStamper);
+            }
 
+            if(!StringUtils.isEmpty(data.getStatusHivPasangan())) {
+                setText("statusHivPasangan", data.getStatusHivPasangan(), pdfStamper);
+            }
+
+            // pasca tes
+            if(!StringUtils.isEmpty(data.getTerimaHasil())) {
+                setText("terimaHasil", data.getTerimaHasil(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getKajiGejalaTb())) {
+                setText("kajiGelajaTb", data.getKajiGejalaTb(), pdfStamper);
+            }
             //Close the pdfStamper.
             pdfStamper.close();
 
@@ -1540,6 +1621,82 @@ public class ExportService {
                 } else if(value.toString().contentEquals("Indeterminate")){
                     pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                     image.setAbsolutePosition(277, 464);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("rujukKonseling")){
+                pageContentByte.beginText();
+                pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                image.setAbsolutePosition(127, 429);
+                image.setWidthPercentage(1);
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("rujukKe")){
+                pageContentByte.beginText();
+                pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                image.setAbsolutePosition(129, 415);
+                image.setWidthPercentage(1);
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("rujukKePdpDanPpia")){
+                pageContentByte.beginText();
+                pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                image.setAbsolutePosition(294, 429);
+                image.setWidthPercentage(1);
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("statusHivPasangan")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Non Reaktif")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(126, 464);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Reaktif")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(215, 464);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Indeterminate")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(277, 464);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("terimaHasil")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(126, 314);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(153, 314);
+                    image.setWidthPercentage(1);
+                }
+
+                pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("kajiGelajaTb")){
+                pageContentByte.beginText();
+
+                if(value.toString().contentEquals("Ya")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(274, 314);
+                    image.setWidthPercentage(1);
+                } else if(value.toString().contentEquals("Tidak")){
+                    pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                    image.setAbsolutePosition(304, 314);
                     image.setWidthPercentage(1);
                 }
 

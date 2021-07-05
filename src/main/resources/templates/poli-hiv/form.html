@@ -1,4 +1,4 @@
-<div xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" th:fragment="form-poli-hiv">
+<div xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" th:fragment="form-poli-hiv">
     <form method="post" action="/poli-hiv/form" th:object="${form}">
         <input type="hidden" th:field="*{id}"/>
 
@@ -19,7 +19,7 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="mdc-layout-grid__inner">
-                                                    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop" sec:authorize="hasRole('ADMIN')">
                                                         <div class="mdc-text-field  mdc-text-field--outlined">
                                                             <input class="mdc-text-field__input" id="noRekamMedis" th:field="*{noRekamMedis}">
                                                             <div class="mdc-notched-outline">
@@ -31,7 +31,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop" >
                                                         <div class="mdc-text-field mdc-text-field--outlined">
                                                             <input class="mdc-text-field__input" th:field="*{nik}">
                                                             <div class="mdc-notched-outline">
@@ -43,7 +43,7 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                                    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop" sec:authorize="hasRole('ADMIN')">
                                                         <div class="mdc-text-field mdc-text-field--outlined">
                                                             <input class="mdc-text-field__input" th:field="*{noRegister}">
                                                             <div class="mdc-notched-outline">
@@ -439,7 +439,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop">
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-4-desktop" sec:authorize="hasRole('ADMIN')">
                                                 <div class="mdc-text-field  mdc-text-field--outlined">
                                                     <input class="mdc-text-field__input" th:field="*{lamaResiko}">
                                                     <div class="mdc-notched-outline">
@@ -584,7 +584,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="mdc-layout-grid__cell--span-12">
+                                            <div class="mdc-layout-grid__cell--span-12" sec:authorize="hasRole('ADMIN')">
                                                 <div class="mdc-card">
                                                     <h6 class="card-title">Jika klien Laki-laki</h6>
                                                     <div class="template-demo">
@@ -693,7 +693,7 @@
                                                                 </div>
                                                             </div>
 
-                                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop">
+                                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12-desktop" sec:authorize="hasRole('ADMIN')">
                                                                 <div class="col">
                                                                     <div class="row">
                                                                         <label>Tanggal tes terakhir pasangan</label>
@@ -721,7 +721,7 @@
                                         <a class="collapsed" data-toggle="collapse" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4"> Populasi Khusus </a>
                                     </h6>
                                 </div>
-                                <div id="collapse-4" class="collapse" role="tabpanel" aria-labelledby="heading-4" data-parent="#accordion">
+                                <div id="collapse-4" class="collapse" role="tabpanel" aria-labelledby="heading-4" data-parent="#accordion" sec:authorize="hasRole('ADMIN')">
                                     <div class="card-body">
                                         <div class="mdc-layout-grid__inner">
 
@@ -768,7 +768,7 @@
                                     <div class="card-body">
                                         <div class="mdc-layout-grid__inner">
 
-                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop">
+                                            <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6-desktop" sec:authorize="hasRole('ADMIN')">
                                                 <div class="col">
                                                     <div class="row">
                                                         <label>Tanggal konseling pra tes HIV</label>
