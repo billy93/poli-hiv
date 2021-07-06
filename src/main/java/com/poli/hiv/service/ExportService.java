@@ -371,6 +371,23 @@ public class ExportService {
         hasilTesKts.setType("checkbox");
         fieldCoordinateHashMap.put("hasilTesKts", hasilTesKts);
 
+        FieldData pernahTesDimanaKts = new FieldData();
+        pernahTesDimanaKts.setX(197);
+        pernahTesDimanaKts.setY(113);
+        pernahTesDimanaKts.setPage(1);
+        pernahTesDimanaKts.setFontSize(10);
+        pernahTesDimanaKts.setMulti(true);
+        fieldCoordinateHashMap.put("pernahTesDimanaKts", pernahTesDimanaKts);
+
+
+        FieldData pernahTesDimanaTipk = new FieldData();
+        pernahTesDimanaTipk.setX(197);
+        pernahTesDimanaTipk.setY(660);
+        pernahTesDimanaTipk.setPage(1);
+        pernahTesDimanaTipk.setFontSize(10);
+        pernahTesDimanaTipk.setMulti(true);
+        fieldCoordinateHashMap.put("pernahTesDimanaTipk", pernahTesDimanaTipk);
+
         FieldData pernahTesTipk = new FieldData();
         pernahTesTipk.setX(366);
         pernahTesTipk.setY(392);
@@ -708,6 +725,10 @@ public class ExportService {
                 setText("hasilTesKts", data.getHasilTesKts(), pdfStamper);
             }
 
+            if(!StringUtils.isEmpty(data.getPernahTesDimanaKts())) {
+                setText("pernahTesDimanaKts", data.getPernahTesDimanaKts(), pdfStamper);
+            }
+
             // Page 2 TIPK
             if(!StringUtils.isEmpty(data.getPernahTesTipk())) {
                 setText("pernahTesTipk", data.getPernahTesTipk(), pdfStamper);
@@ -720,6 +741,9 @@ public class ExportService {
             }
             if(!StringUtils.isEmpty(data.getKesediaanTesTipk())) {
                 setText("kesediaanTesTipk", data.getKesediaanTesTipk(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getPernahTesDimanaTipk())) {
+                setText("pernahTesDimanaTipk", data.getPernahTesDimanaTipk(), pdfStamper);
             }
 
             // Tes antibodi HIV
@@ -765,6 +789,9 @@ public class ExportService {
             }
             if(!StringUtils.isEmpty(data.getJenisPelayanan())) {
                 setText("jenisPelayanan", data.getJenisPelayanan(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getTindakLanjutPascaTes())) {
+                setText("tindakLanjutPascaTes", data.getTindakLanjutPascaTes(), pdfStamper);
             }
             //Close the pdfStamper.
             pdfStamper.close();
@@ -1809,6 +1836,61 @@ public class ExportService {
                 }
 
                 pageContentByte.addImage(image);
+                pageContentByte.endText();
+            }
+            else if(field.contentEquals("tindakLanjutPascaTes")){
+                pageContentByte.beginText();
+                for(String d : ((List<String>)value)){
+                    if(d.toString().contentEquals("Tes Ulang")){
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        image.setAbsolutePosition(127, 294);
+                        image.setWidthPercentage(1);
+                    } else if(d.toString().contentEquals("Rujuk ke PDP")){
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        image.setAbsolutePosition(127, 279);
+                        image.setWidthPercentage(1);
+                    } else if(d.toString().contentEquals("Rujuk ke Layanan PRTM")){
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        image.setAbsolutePosition(127, 264);
+                        image.setWidthPercentage(1);
+                    } else if(d.toString().contentEquals("Rujuk ke Layanan IMS")){
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        image.setAbsolutePosition(253, 292);
+                        image.setWidthPercentage(1);
+                    } else if(d.toString().contentEquals("Rujuk ke PPIA")){
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        image.setAbsolutePosition(253, 276);
+                        image.setWidthPercentage(1);
+                    } else if(d.toString().contentEquals("Rujuk ke Rehab")){
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        image.setAbsolutePosition(253, 263);
+                        image.setWidthPercentage(1);
+                    } else if(d.toString().contentEquals("Rujuk ke Layanan LASS")){
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        image.setAbsolutePosition(253, 249);
+                        image.setWidthPercentage(1);
+                    } else if(d.toString().contentEquals("Rujuk ke layanan TB")){
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        image.setAbsolutePosition(341, 292);
+                        image.setWidthPercentage(1);
+                    } else if(d.toString().contentEquals("Rujuk ke Professional")){
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        image.setAbsolutePosition(341, 278);
+                        image.setWidthPercentage(1);
+                    } else if(d.toString().contentEquals("Rujuk ke petugas pendukung")){
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        image.setAbsolutePosition(340, 263);
+                        image.setWidthPercentage(1);
+                    }else if(d.toString().contentEquals("Konseling")){
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        image.setAbsolutePosition(424, 292);
+                        image.setWidthPercentage(1);
+                    }
+
+
+                    pageContentByte.addImage(image);
+                }
+
                 pageContentByte.endText();
             }
         }
