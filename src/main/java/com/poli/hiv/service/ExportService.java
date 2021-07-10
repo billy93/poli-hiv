@@ -383,7 +383,7 @@ public class ExportService {
         FieldData pernahTesDimanaTipk = new FieldData();
         pernahTesDimanaTipk.setX(197);
         pernahTesDimanaTipk.setY(660);
-        pernahTesDimanaTipk.setPage(1);
+        pernahTesDimanaTipk.setPage(2);
         pernahTesDimanaTipk.setFontSize(10);
         pernahTesDimanaTipk.setMulti(true);
         fieldCoordinateHashMap.put("pernahTesDimanaTipk", pernahTesDimanaTipk);
@@ -1578,69 +1578,83 @@ public class ExportService {
                 pageContentByte.endText();
             }
             else if(field.contentEquals("penyakitTerkaitPasienTipk")){
-                pageContentByte.beginText();
-                for(String d : ((List<String>)value)){
-                    if(d.toString().contentEquals("TB")){
-                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
-                        image.setAbsolutePosition(124, 613);
-                        image.setWidthPercentage(1);
-                    } else if(d.toString().contentEquals("Diare")){
-                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
-                        image.setAbsolutePosition(124, 598);
-                        image.setWidthPercentage(1);
-                    } else if(d.toString().contentEquals("Kandidiasis oralesovagial")){
-                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
-                        image.setAbsolutePosition(124, 584);
-                        image.setWidthPercentage(1);
-                    } else if(d.toString().contentEquals("Dermatitis")){
-                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
-                        image.setAbsolutePosition(234, 612);
-                        image.setWidthPercentage(1);
-                    } else if(d.toString().contentEquals("LGV")){
-                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
-                        image.setAbsolutePosition(234, 598);
-                        image.setWidthPercentage(1);
-                    } else if(d.toString().contentEquals("PCP")){
-                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
-                        image.setAbsolutePosition(234, 582);
-                        image.setWidthPercentage(1);
-                    } else if(d.toString().contentEquals("Herpes")){
-                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
-                        image.setAbsolutePosition(298, 612);
-                        image.setWidthPercentage(1);
-                    } else if(d.toString().contentEquals("Toksoplasmosis")){
-                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
-                        image.setAbsolutePosition(298, 599);
-                        image.setWidthPercentage(1);
-                    } else if(d.toString().contentEquals("Wasting syndrome")){
-                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
-                        image.setAbsolutePosition(298, 583);
-                        image.setWidthPercentage(1);
-                    } else if(d.toString().contentEquals("Sifilis")){
-                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
-                        image.setAbsolutePosition(390, 613);
-                        image.setWidthPercentage(1);
-                    }else if(d.toString().contentEquals("Hepatitis")){
-                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
-                        image.setAbsolutePosition(458, 613);
-                        image.setWidthPercentage(1);
-                    }
-                    else if(d.toString().contentEquals("IMS Lainnya")){
-                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
-                        image.setAbsolutePosition(392, 598);
-                        image.setWidthPercentage(1);
-                    }
-                    else if(d.toString().contentEquals("Lainnya")){
-                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
-                        image.setAbsolutePosition(390, 583);
-                        image.setWidthPercentage(1);
-                    }
+                List<String> val = ((List<String>)value);
+
+                if(val.size() > 0) {
+                    pageContentByte.beginText();
+                    for (String d : val) {
+                        if (d.toString().contentEquals("TB")) {
+                            pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                            image.setAbsolutePosition(124, 613);
+                            image.setWidthPercentage(1);
+                            pageContentByte.addImage(image);
+                        } else if (d.toString().contentEquals("Diare")) {
+                            pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                            image.setAbsolutePosition(124, 598);
+                            image.setWidthPercentage(1);
+                            pageContentByte.addImage(image);
+                        } else if (d.toString().contentEquals("Kandidiasis oralesovagial")) {
+                            pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                            image.setAbsolutePosition(124, 584);
+                            image.setWidthPercentage(1);
+                            pageContentByte.addImage(image);
+                        } else if (d.toString().contentEquals("Dermatitis")) {
+                            pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                            image.setAbsolutePosition(234, 612);
+                            image.setWidthPercentage(1);
+                            pageContentByte.addImage(image);
+                        } else if (d.toString().contentEquals("LGV")) {
+                            pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                            image.setAbsolutePosition(234, 598);
+                            image.setWidthPercentage(1);
+                            pageContentByte.addImage(image);
+                        } else if (d.toString().contentEquals("PCP")) {
+                            pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                            image.setAbsolutePosition(234, 582);
+                            image.setWidthPercentage(1);
+                            pageContentByte.addImage(image);
+                        } else if (d.toString().contentEquals("Herpes")) {
+                            pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                            image.setAbsolutePosition(298, 612);
+                            image.setWidthPercentage(1);
+                            pageContentByte.addImage(image);
+                        } else if (d.toString().contentEquals("Toksoplasmosis")) {
+                            pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                            image.setAbsolutePosition(298, 599);
+                            image.setWidthPercentage(1);
+                            pageContentByte.addImage(image);
+                        } else if (d.toString().contentEquals("Wasting syndrome")) {
+                            pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                            image.setAbsolutePosition(298, 583);
+                            image.setWidthPercentage(1);
+                            pageContentByte.addImage(image);
+                        } else if (d.toString().contentEquals("Sifilis")) {
+                            pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                            image.setAbsolutePosition(390, 613);
+                            image.setWidthPercentage(1);
+                            pageContentByte.addImage(image);
+                        } else if (d.toString().contentEquals("Hepatitis")) {
+                            pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                            image.setAbsolutePosition(458, 613);
+                            image.setWidthPercentage(1);
+                            pageContentByte.addImage(image);
+                        } else if (d.toString().contentEquals("IMS Lainnya")) {
+                            pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                            image.setAbsolutePosition(392, 598);
+                            image.setWidthPercentage(1);
+                            pageContentByte.addImage(image);
+                        } else if (d.toString().contentEquals("Lainnya")) {
+                            pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                            image.setAbsolutePosition(390, 583);
+                            image.setWidthPercentage(1);
+                            pageContentByte.addImage(image);
+                        }
 
 
-                    pageContentByte.addImage(image);
+                    }
+
+                    pageContentByte.endText();
                 }
-
-                pageContentByte.endText();
             }
             else if(field.contentEquals("kesediaanTesTipk")){
                 pageContentByte.beginText();
@@ -1845,50 +1859,60 @@ public class ExportService {
                         pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                         image.setAbsolutePosition(127, 294);
                         image.setWidthPercentage(1);
+                        pageContentByte.addImage(image);
                     } else if(d.toString().contentEquals("Rujuk ke PDP")){
                         pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                         image.setAbsolutePosition(127, 279);
                         image.setWidthPercentage(1);
+                        pageContentByte.addImage(image);
                     } else if(d.toString().contentEquals("Rujuk ke Layanan PRTM")){
                         pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                         image.setAbsolutePosition(127, 264);
                         image.setWidthPercentage(1);
+                        pageContentByte.addImage(image);
                     } else if(d.toString().contentEquals("Rujuk ke Layanan IMS")){
                         pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                         image.setAbsolutePosition(253, 292);
                         image.setWidthPercentage(1);
+                        pageContentByte.addImage(image);
                     } else if(d.toString().contentEquals("Rujuk ke PPIA")){
                         pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                         image.setAbsolutePosition(253, 276);
                         image.setWidthPercentage(1);
+                        pageContentByte.addImage(image);
                     } else if(d.toString().contentEquals("Rujuk ke Rehab")){
                         pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                         image.setAbsolutePosition(253, 263);
                         image.setWidthPercentage(1);
+                        pageContentByte.addImage(image);
                     } else if(d.toString().contentEquals("Rujuk ke Layanan LASS")){
                         pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                         image.setAbsolutePosition(253, 249);
                         image.setWidthPercentage(1);
+                        pageContentByte.addImage(image);
                     } else if(d.toString().contentEquals("Rujuk ke layanan TB")){
                         pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                         image.setAbsolutePosition(341, 292);
                         image.setWidthPercentage(1);
+                        pageContentByte.addImage(image);
                     } else if(d.toString().contentEquals("Rujuk ke Professional")){
                         pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                         image.setAbsolutePosition(341, 278);
                         image.setWidthPercentage(1);
+                        pageContentByte.addImage(image);
                     } else if(d.toString().contentEquals("Rujuk ke petugas pendukung")){
                         pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                         image.setAbsolutePosition(340, 263);
                         image.setWidthPercentage(1);
+                        pageContentByte.addImage(image);
                     }else if(d.toString().contentEquals("Konseling")){
                         pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                         image.setAbsolutePosition(424, 292);
                         image.setWidthPercentage(1);
+                        pageContentByte.addImage(image);
                     }
 
 
-                    pageContentByte.addImage(image);
                 }
 
                 pageContentByte.endText();

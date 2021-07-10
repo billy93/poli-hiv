@@ -8,6 +8,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -95,7 +96,8 @@ public class PoliHIVController {
 
     @GetMapping("/poli-hiv/list")
     public String list(Model model){
-        List<PoliHIV> data = poliHIVRepository.findAll();
+        Sort sort = Sort.by(Sort.Direction.DESC, "createdDate");
+        List<PoliHIV> data = poliHIVRepository.findAll(sort);
         model.addAttribute("data", data);
         return "poli-hiv/list";
     }
