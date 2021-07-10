@@ -12,12 +12,15 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -82,16 +85,27 @@ public class PoliHIVController {
     }
 
     @PostMapping("/poli-hiv/form")
-    public String index(Model model, @ModelAttribute PoliHIV poliHIV){
+    public String index(Model model, @ModelAttribute PoliHIV poliHIV, RedirectAttributes redirectAttributes){
         if(poliHIV.getId() != null){
             Optional<PoliHIV> poliHIV1 = poliHIVRepository.findById(poliHIV.getId());
             poliHIV.setCreatedDate(poliHIV1.get().getCreatedDate());
+            poliHIVRepository.save(poliHIV);
         }
         else {
             poliHIV.setCreatedDate(Instant.now());
         }
         poliHIVRepository.save(poliHIV);
-        return "redirect:/poli-hiv/list";
+
+        // redirect to list if admin
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null && auth.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
+            return "redirect:/poli-hiv/list";
+        }
+        else{
+            redirectAttributes.addFlashAttribute("registerId", poliHIV.getId());
+            return "redirect:/poli-hiv/view";
+        }
+        // redirect to view if user
     }
 
     @GetMapping("/poli-hiv/list")
