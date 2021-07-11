@@ -38,11 +38,58 @@
                       </tbody>
                     </table>
                   </div>
+
+                  <form id="searchForm" th:action="@{/poli-hiv/list}" th:object="${searchParam}" method="post" >
+                    <input type="hidden" id="page" th:field="*{page}"/>
+
+                    <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--span-12-tablet">
+                      <div class="mdc-card">
+                        <section class="mdc-card__supporting-text">
+                          <div class="template-demo">
+                            <a href="javascript:;" th:onclick="'paginationLink(\'' + @{${currentPage}-1} + '\')'" class="mdc-button mdc-button--outlined mdc-ripple-upgraded">
+                              <
+                            </a>
+                            <a th:each="page : ${pageNumbers}" th:onclick="'paginationLink(\'' + @{${page}-1} + '\')'"
+                               th:classappend="${page == currentPage+1 ? 'mdc-button mdc-button--outlined outlined-button--success mdc-ripple-upgraded':'mdc-button mdc-button--outlined mdc-ripple-upgraded'}">
+                              [[${page}]]
+                            </a>
+                            <a href="#" th:onclick="'paginationLink(\'' + @{${currentPage}+1} + '\')'" class="mdc-button mdc-button--outlined mdc-ripple-upgraded">
+                              >
+                            </a>
+                          </div>
+                        </section>
+                      </div>
+                    </div>
+                  </form>
+
+<!--                  <div>-->
+<!--                    <div></div>-->
+<!--                    <ul class="pagination-custom">-->
+<!--                      <li>-->
+<!--                        <a href="#" th:onclick="'paginationLink(\'' + @{${currentPage}-1} + '\')'">-->
+<!--                          <-->
+<!--                        </a>-->
+<!--                      </li>-->
+<!--                      <li th:classappend="${page == currentPage+1 ? 'active':''}">-->
+<!--                        <a th:each="page : ${pageNumbers}" th:onclick="'paginationLink(\'' + @{${page}-1} + '\')'">-->
+<!--                          [[${page}]]-->
+<!--                        </a>-->
+<!--                      </li>-->
+<!--                      <li>-->
+<!--                        <a href="#" th:onclick="'paginationLink(\'' + @{${currentPage}+1} + '\')'">-->
+<!--                          >-->
+<!--                        </a>-->
+<!--                      </li>-->
+<!--                    </ul>-->
+<!--                  </div>-->
+
                 </div>
               </div>
             </div>
           </div>
         </main>
+<!--        </form>-->
+
         <!-- partial:../../partials/_footer.html -->
         <footer>
           <div class="mdc-layout-grid">
@@ -57,6 +104,26 @@
           </div>
         </footer>
         <!-- partial -->
+
+        <script th:inline="javascript">
+          var totalPages = /*[[${totalPages}]]*/ 0;
+          function paginationLink(page){
+            if(page < 0){
+              page = 0;
+            }
+            else if(page > totalPages-1){
+              page = totalPages-1;
+            }
+            $('#page').val(page);
+            $('#searchForm').submit();
+          }
+
+          function exportFile(){
+            $("#searchForm").attr("action", "/poli-hiv/list/export");
+            $("#searchForm").submit();
+            $("#searchForm").attr("action", "/poli-hiv/list");
+          }
+        </script>
       </div>
 
 </html>

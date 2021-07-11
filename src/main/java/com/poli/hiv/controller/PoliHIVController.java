@@ -1,6 +1,8 @@
 package com.poli.hiv.controller;
 
 import com.poli.hiv.model.PoliHIV;
+import com.poli.hiv.model.dto.SearchPoliHIVListDTO;
+import com.poli.hiv.model.dto.SearchPoliHIVListNonOptionalDTO;
 import com.poli.hiv.repository.PoliHIVRepository;
 import com.poli.hiv.service.ExportService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +27,12 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Controller
 public class PoliHIVController {
@@ -108,11 +113,57 @@ public class PoliHIVController {
         // redirect to view if user
     }
 
+    @PostMapping("/poli-hiv/list")
+    public String listSearch(SearchPoliHIVListDTO searchPoliHivListDTO, Model model){
+        return list(searchPoliHivListDTO, model);
+    }
+
     @GetMapping("/poli-hiv/list")
-    public String list(Model model){
+    public String list(SearchPoliHIVListDTO searchPoliHivListDTO, Model model){
+//        List<PoliHIV> data = poliHIVRepository.findAll(sort);
+//        model.addAttribute("data", data);
+
         Sort sort = Sort.by(Sort.Direction.DESC, "createdDate");
-        List<PoliHIV> data = poliHIVRepository.findAll(sort);
+        Pageable page = PageRequest.of(searchPoliHivListDTO.getPage().get(), searchPoliHivListDTO.getSize().get(), sort);
+        Page<PoliHIV> poliHIVPage = poliHIVRepository.findAll(page);
+        List<PoliHIV> data = poliHIVPage.getContent();
         model.addAttribute("data", data);
+
+        SearchPoliHIVListNonOptionalDTO searchPoliHivListNonOptionalDTO = new SearchPoliHIVListNonOptionalDTO();
+        searchPoliHivListNonOptionalDTO.setPage(searchPoliHivListDTO.getPage().get());
+        model.addAttribute("searchParam", searchPoliHivListNonOptionalDTO);
+
+        int totalData = Integer.parseInt((poliHIVPage.getTotalElements())+"");
+
+        int currentPage = searchPoliHivListDTO.getPage().get();
+        int max = 5;
+        double total = totalData;
+        double size = searchPoliHivListDTO.getSize().get();
+        int totalPages = (int)Math.ceil(total/size);
+        if (totalPages > 0) {
+            List<Integer> pageNumbers = new ArrayList<Integer>();
+            int cPage = currentPage+1;
+            if(cPage-2 > 0 && totalPages > max) {
+                int startPage = ((cPage+2) > totalPages ? (cPage+1) > totalPages ? (cPage-4) : (cPage-3) : (cPage-2));
+                int endPage = ((cPage+2) > totalPages ? totalPages : (cPage+2));
+                for(int i=startPage; i<=endPage; i++) {
+                    pageNumbers.add(i);
+                }
+            }
+            else {
+                pageNumbers.addAll(IntStream.rangeClosed(1, totalPages > max ? max : totalPages).boxed().collect(Collectors.toList()));
+            }
+            model.addAttribute("pageNumbers", pageNumbers);
+        }
+        model.addAttribute("totalPages", totalPages);
+        model.addAttribute("currentPage", currentPage);
+        model.addAttribute("totalData", totalData);
+
+        int itemPerPage = 10;
+        int to =  ((searchPoliHivListDTO.getPage().get()+1) * itemPerPage) > totalData ? totalData : ((searchPoliHivListDTO.getPage().get()+1) * itemPerPage);
+        int from = ((searchPoliHivListDTO.getPage().get()) * itemPerPage + 1);
+        String showingData = from + "-" + to;
+        model.addAttribute("showingData", showingData);
         return "poli-hiv/list";
     }
 
