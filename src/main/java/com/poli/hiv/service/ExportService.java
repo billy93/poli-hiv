@@ -380,6 +380,13 @@ public class ExportService {
         pernahTesDimanaKts.setMulti(true);
         fieldCoordinateHashMap.put("pernahTesDimanaKts", pernahTesDimanaKts);
 
+        FieldData tanggalPemberianInformasi = new FieldData();
+        tanggalPemberianInformasi.setX(61);
+        tanggalPemberianInformasi.setY(479);
+        tanggalPemberianInformasi.setPage(2);
+        tanggalPemberianInformasi.setFontSize(10);
+        tanggalPemberianInformasi.setMulti(true);
+        fieldCoordinateHashMap.put("tanggalPemberianInformasi", tanggalPemberianInformasi);
 
         FieldData pernahTesDimanaTipk = new FieldData();
         pernahTesDimanaTipk.setX(197);
@@ -421,6 +428,14 @@ public class ExportService {
         kesediaanTesTipk.setType("checkbox");
         fieldCoordinateHashMap.put("kesediaanTesTipk", kesediaanTesTipk);
 
+        FieldData tanggalTesHiv = new FieldData();
+        tanggalTesHiv.setX(61);
+        tanggalTesHiv.setY(479);
+        tanggalTesHiv.setPage(2);
+        tanggalTesHiv.setFontSize(10);
+        tanggalTesHiv.setMulti(true);
+        fieldCoordinateHashMap.put("tanggalTesHiv", tanggalTesHiv);
+
         FieldData hasilTesR1 = new FieldData();
         hasilTesR1.setX(366);
         hasilTesR1.setY(392);
@@ -428,6 +443,30 @@ public class ExportService {
         hasilTesR1.setFontSize(10);
         hasilTesR1.setType("checkbox");
         fieldCoordinateHashMap.put("hasilTesR1", hasilTesR1);
+
+        FieldData hasilTesR1Reagen = new FieldData();
+        hasilTesR1Reagen.setX(327);
+        hasilTesR1Reagen.setY(522);
+        hasilTesR1Reagen.setMulti(true);
+        hasilTesR1Reagen.setPage(2);
+        hasilTesR1Reagen.setFontSize(10);
+        fieldCoordinateHashMap.put("hasilTesR1Reagen", hasilTesR1Reagen);
+
+        FieldData hasilTesR2Reagen = new FieldData();
+        hasilTesR2Reagen.setX(327);
+        hasilTesR2Reagen.setY(503);
+        hasilTesR2Reagen.setMulti(true);
+        hasilTesR2Reagen.setPage(2);
+        hasilTesR2Reagen.setFontSize(10);
+        fieldCoordinateHashMap.put("hasilTesR2Reagen", hasilTesR2Reagen);
+
+        FieldData hasilTesR3Reagen = new FieldData();
+        hasilTesR3Reagen.setX(327);
+        hasilTesR3Reagen.setY(484);
+        hasilTesR3Reagen.setMulti(true);
+        hasilTesR3Reagen.setPage(2);
+        hasilTesR3Reagen.setFontSize(10);
+        fieldCoordinateHashMap.put("hasilTesR3Reagen", hasilTesR3Reagen);
 
         FieldData hasilTesR2 = new FieldData();
         hasilTesR2.setX(366);
@@ -492,6 +531,14 @@ public class ExportService {
         tindakLanjutPascaTes.setFontSize(10);
         tindakLanjutPascaTes.setType("checkbox");
         fieldCoordinateHashMap.put("tindakLanjutPascaTes", tindakLanjutPascaTes);
+
+        FieldData tanggalKonselingPascaTes = new FieldData();
+        tanggalKonselingPascaTes.setX(61);
+        tanggalKonselingPascaTes.setY(479);
+        tanggalKonselingPascaTes.setPage(2);
+        tanggalKonselingPascaTes.setFontSize(10);
+        tanggalKonselingPascaTes.setMulti(true);
+        fieldCoordinateHashMap.put("tanggalKonselingPascaTes", tanggalKonselingPascaTes);
 
         FieldData terimaHasil = new FieldData();
         terimaHasil.setX(366);
@@ -722,6 +769,11 @@ public class ExportService {
 //                setText("pernahTesKapanKts", data.getPernahTesKapanKts(), pdfStamper);
 //            }
 
+
+            if(!StringUtils.isEmpty(data.getTanggalPemberianInformasi())) {
+                setText("tanggalPemberianInformasi", data.getTanggalPemberianInformasi(), pdfStamper);
+            }
+
             if(!StringUtils.isEmpty(data.getHasilTesKts())) {
                 setText("hasilTesKts", data.getHasilTesKts(), pdfStamper);
             }
@@ -748,6 +800,19 @@ public class ExportService {
             }
 
             // Tes antibodi HIV
+            if(!StringUtils.isEmpty(data.getTanggalTesHiv())) {
+                setText("tanggalTesHiv", data.getTanggalTesHiv(), pdfStamper);
+            }
+
+            if(!StringUtils.isEmpty(data.getHasilTesR1Reagen())) {
+                setText("hasilTesR1Reagen", data.getHasilTesR1Reagen(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getHasilTesR2Reagen())) {
+                setText("hasilTesR2Reagen", data.getHasilTesR2Reagen(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getHasilTesR3Reagen())) {
+                setText("hasilTesR3Reagen", data.getHasilTesR3Reagen(), pdfStamper);
+            }
             if(!StringUtils.isEmpty(data.getHasilTesR1())) {
                 setText("hasilTesR1", data.getHasilTesR1(), pdfStamper);
             }
@@ -778,6 +843,9 @@ public class ExportService {
             }
 
             // pasca tes
+            if(!StringUtils.isEmpty(data.getTanggalKonselingPascaTes())) {
+                setText("tanggalKonselingPascaTes", data.getTanggalKonselingPascaTes(), pdfStamper);
+            }
             if(!StringUtils.isEmpty(data.getTerimaHasil())) {
                 setText("terimaHasil", data.getTerimaHasil(), pdfStamper);
             }
@@ -943,6 +1011,102 @@ public class ExportService {
                         pageContentByte.beginText();
                         pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
                         pageContentByte.setTextMatrix(176 + (i * 11), 282);
+                        pageContentByte.showText(String.valueOf(thn.toString().charAt(i)));
+                        pageContentByte.endText();
+                    }
+                }
+                else if(field.contentEquals("tanggalPemberianInformasi")){
+                    Date tglLahir = (Date) value;
+                    SimpleDateFormat dateTgl = new SimpleDateFormat("dd");
+                    String tgl = dateTgl.format(tglLahir);
+                    for (int i = 0; i < tgl.toString().length(); i++) {
+                        pageContentByte.beginText();
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        pageContentByte.setTextMatrix(127 + (i * 13), 680);
+                        pageContentByte.showText(String.valueOf(tgl.toString().charAt(i)));
+                        pageContentByte.endText();
+                    }
+
+                    SimpleDateFormat dateBln = new SimpleDateFormat("MM");
+                    String bln = dateBln.format(tglLahir);
+                    for (int i = 0; i < bln.toString().length(); i++) {
+                        pageContentByte.beginText();
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        pageContentByte.setTextMatrix(153 + (i * 13), 680);
+                        pageContentByte.showText(String.valueOf(bln.toString().charAt(i)));
+                        pageContentByte.endText();
+                    }
+
+                    SimpleDateFormat dateThn = new SimpleDateFormat("yyyy");
+                    String thn = dateThn.format(tglLahir);
+                    for (int i = 0; i < thn.toString().length(); i++) {
+                        pageContentByte.beginText();
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        pageContentByte.setTextMatrix(179 + (i * 13), 680);
+                        pageContentByte.showText(String.valueOf(thn.toString().charAt(i)));
+                        pageContentByte.endText();
+                    }
+                }
+                else if(field.contentEquals("tanggalTesHiv")){
+                    Date tglLahir = (Date) value;
+                    SimpleDateFormat dateTgl = new SimpleDateFormat("dd");
+                    String tgl = dateTgl.format(tglLahir);
+                    for (int i = 0; i < tgl.toString().length(); i++) {
+                        pageContentByte.beginText();
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        pageContentByte.setTextMatrix(127 + (i * 13), 539);
+                        pageContentByte.showText(String.valueOf(tgl.toString().charAt(i)));
+                        pageContentByte.endText();
+                    }
+
+                    SimpleDateFormat dateBln = new SimpleDateFormat("MM");
+                    String bln = dateBln.format(tglLahir);
+                    for (int i = 0; i < bln.toString().length(); i++) {
+                        pageContentByte.beginText();
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        pageContentByte.setTextMatrix(153 + (i * 13), 539);
+                        pageContentByte.showText(String.valueOf(bln.toString().charAt(i)));
+                        pageContentByte.endText();
+                    }
+
+                    SimpleDateFormat dateThn = new SimpleDateFormat("yyyy");
+                    String thn = dateThn.format(tglLahir);
+                    for (int i = 0; i < thn.toString().length(); i++) {
+                        pageContentByte.beginText();
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        pageContentByte.setTextMatrix(179 + (i * 13), 539);
+                        pageContentByte.showText(String.valueOf(thn.toString().charAt(i)));
+                        pageContentByte.endText();
+                    }
+                }
+                else if(field.contentEquals("tanggalKonselingPascaTes")){
+                    Date tglLahir = (Date) value;
+                    SimpleDateFormat dateTgl = new SimpleDateFormat("dd");
+                    String tgl = dateTgl.format(tglLahir);
+                    for (int i = 0; i < tgl.toString().length(); i++) {
+                        pageContentByte.beginText();
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        pageContentByte.setTextMatrix(129 + (i * 13), 343);
+                        pageContentByte.showText(String.valueOf(tgl.toString().charAt(i)));
+                        pageContentByte.endText();
+                    }
+
+                    SimpleDateFormat dateBln = new SimpleDateFormat("MM");
+                    String bln = dateBln.format(tglLahir);
+                    for (int i = 0; i < bln.toString().length(); i++) {
+                        pageContentByte.beginText();
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        pageContentByte.setTextMatrix(155 + (i * 13), 343);
+                        pageContentByte.showText(String.valueOf(bln.toString().charAt(i)));
+                        pageContentByte.endText();
+                    }
+
+                    SimpleDateFormat dateThn = new SimpleDateFormat("yyyy");
+                    String thn = dateThn.format(tglLahir);
+                    for (int i = 0; i < thn.toString().length(); i++) {
+                        pageContentByte.beginText();
+                        pageContentByte.setFontAndSize(baseFont, fieldCoordinate.getFontSize());
+                        pageContentByte.setTextMatrix(181 + (i * 13), 343);
                         pageContentByte.showText(String.valueOf(thn.toString().charAt(i)));
                         pageContentByte.endText();
                     }
