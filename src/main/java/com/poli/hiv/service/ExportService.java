@@ -23,6 +23,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -1942,11 +1943,11 @@ public class ExportService {
             pageContentByte.endText();
         }
         else if(field.contentEquals("createdDate")) {
-            Date d = (Date)value;
+            Date d = Date.from((Instant)value);
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy");
             pageContentByte.beginText();
             pageContentByte.setFontAndSize(baseFont, 10);
-            pageContentByte.setTextMatrix(403, 158);
+            pageContentByte.setTextMatrix(406, 163);
             pageContentByte.showText(dateFormat.format(d));
             pageContentByte.endText();
         }
