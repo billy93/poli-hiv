@@ -2220,20 +2220,14 @@ public class ExportService {
             pageContentByte.beginText();
             pageContentByte.setFontAndSize(baseFont, 10);
             pageContentByte.setTextMatrix(360, 71);
-            pageContentByte.showText(value.toString());
+            pageContentByte.showText("dr. Namira Azzahra");
             pageContentByte.endText();
         }
         else if(field.contentEquals("nik")) {
             pageContentByte.beginText();
             pageContentByte.setFontAndSize(baseFont, 10);
-            pageContentByte.setTextMatrix(115, 678);
-            pageContentByte.showText(value.toString());
-            pageContentByte.endText();
-
-            pageContentByte.beginText();
-            pageContentByte.setFontAndSize(baseFont, 10);
-            pageContentByte.setTextMatrix(360, 61);
-            pageContentByte.showText(value.toString());
+            pageContentByte.setTextMatrix(360, 56);
+            pageContentByte.showText("NIP 199007242020122012");
             pageContentByte.endText();
         }
         else if(field.contentEquals("createdDate")) {
