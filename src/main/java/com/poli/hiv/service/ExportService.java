@@ -2216,6 +2216,25 @@ public class ExportService {
             pageContentByte.setTextMatrix(115, 678);
             pageContentByte.showText(value.toString());
             pageContentByte.endText();
+
+            pageContentByte.beginText();
+            pageContentByte.setFontAndSize(baseFont, 10);
+            pageContentByte.setTextMatrix(360, 71);
+            pageContentByte.showText(value.toString());
+            pageContentByte.endText();
+        }
+        else if(field.contentEquals("nik")) {
+            pageContentByte.beginText();
+            pageContentByte.setFontAndSize(baseFont, 10);
+            pageContentByte.setTextMatrix(115, 678);
+            pageContentByte.showText(value.toString());
+            pageContentByte.endText();
+
+            pageContentByte.beginText();
+            pageContentByte.setFontAndSize(baseFont, 10);
+            pageContentByte.setTextMatrix(360, 61);
+            pageContentByte.showText(value.toString());
+            pageContentByte.endText();
         }
         else if(field.contentEquals("createdDate")) {
             Date d = Date.from((Instant)value);
@@ -2269,6 +2288,9 @@ public class ExportService {
             }
             if(!StringUtils.isEmpty(data.getNama())) {
                 setTextFormLab("nama", data.getNama(), pdfStamper);
+            }
+            if(!StringUtils.isEmpty(data.getNik())) {
+                setTextFormLab("nik", data.getNik(), pdfStamper);
             }
             if(!StringUtils.isEmpty(data.getAlamat())) {
                 setTextFormLab("alamat", data.getAlamat(), pdfStamper);
